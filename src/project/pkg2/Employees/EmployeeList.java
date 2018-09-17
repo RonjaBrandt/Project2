@@ -68,7 +68,6 @@ public class EmployeeList extends Employee {
                     titles = Title.PROGRAMMER;
                     Programmer programmer = new Programmer(name,age,gender,titles,salary,bonus);
                     System.out.println("Enter the salary of the employee: ");
-                    //salary = sc.nextDouble();
                     programmer.setSalary(sc.nextDouble());
                     salary = programmer.getSalary();
                     System.out.println("Enter the the bonus for the employee: ");
@@ -126,7 +125,7 @@ public class EmployeeList extends Employee {
                 case 1:
 
                     EmployeeList.employList.add(employee);
-                    System.out.println("Employee created, returning to previous menu.");
+                    System.out.println("Employee created with the ID-number: "+ Employee.getID()+". returning to previous menu.");
                     EmployeeManagement.menu2();
                     break;
                 case 2:

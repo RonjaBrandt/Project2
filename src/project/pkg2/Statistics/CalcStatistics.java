@@ -44,31 +44,23 @@ public class CalcStatistics {
 
 
 
-    public static ArrayList maxWage (){
-        int räkna =0 ;
+    public static  void maxWage (){
         ArrayList<Double> wages = new ArrayList<>();
-
         for (Employee  employee: EmployeeList.employList) {
-            räkna ++;
             wages.add(employee.getSalary());
-        }  //  maximum wage , bubble sort. skicka höger om dom är större.
+        }
         Collections.sort(wages);
-        System.out.println(wages);
-        return wages;
+        double last = wages.get(wages.size()-1);
+        System.out.println("The highest wage in this company is : " + last);
     }
 
-    public static ArrayList minWage (){ // inte klar.
-
-        int räkna =0 ;
+    public static void minWage (){ // inte klar.
         ArrayList<Double> wages = new ArrayList<>();
-
         for (Employee  employee: EmployeeList.employList) {
-            räkna ++;
             wages.add(employee.getSalary());
-        }  //  maximum wage , bubble sort. skicka höger om dom är större.
+        }
         Collections.sort(wages);
-        System.out.println(wages);
-        return wages;
+        System.out.println("The smallest wage in the company is : " + wages.get(0));
     }
 
 
@@ -80,12 +72,7 @@ public class CalcStatistics {
 
     /*
 
-    Employee statistics.
 
-
-.
-
-3) min wage ^
 
 4) total bonus, plussa ihop alla bonusars slutgiltiga summa.
 "Bonus payment overall and in various professional roles."
