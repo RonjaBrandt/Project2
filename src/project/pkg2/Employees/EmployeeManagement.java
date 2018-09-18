@@ -60,7 +60,7 @@ public class EmployeeManagement {
                 // EmployeeManagement.searchEmployeeByDepartment();
                 break;
             case 10:
-                // EmployeeManagement.displayAllEmployees();
+              EmployeeList.printAllEmployees();
                 break;
             /*
              *Takes the user back to the first menu i Main

@@ -54,13 +54,23 @@ public class CalcStatistics {
         System.out.println("The highest wage in this company is : " + last);
     }
 
-    public static void minWage (){ // inte klar.
+    public static void minWage (){
         ArrayList<Double> wages = new ArrayList<>();
         for (Employee  employee: EmployeeList.employList) {
             wages.add(employee.getSalary());
         }
         Collections.sort(wages);
-        System.out.println("The smallest wage in the company is : " + wages.get(0));
+        System.out.println("The lowest wage in the company is : " + wages.get(0));
+    }
+
+
+
+    public static void totalBonus (){
+        double sum =0;
+        for (Employee employee: EmployeeList.employList) {
+            sum = sum + employee.getFinalBonus();
+        }
+        System.out.println("You are paying a total of : " + sum + " as bonus to all employees.");
     }
 
 
@@ -70,15 +80,58 @@ public class CalcStatistics {
 
 
 
+
+
+    public static void percentagemen(){  // försök få dessa att funka per yrke tack!
+        double men = 0;
+        for (Employee employe: EmployeeList.employList) {
+            if (employe.getGender().equals(Gender.MALE)){
+                men ++;
+            }
+        }
+        double count = EmployeeList.employList.size(); // antal anställda
+        double sum = men/count * 100;
+        System.out.println("There are : " + sum   +" % of men working at this company.");
+    }
+
+    public static void percentageWomen(){
+        double women = 0;
+        for (Employee employe: EmployeeList.employList) {
+            if (employe.getGender().equals(Gender.FEMALE)){
+                women ++;
+            }
+        }
+        double count = EmployeeList.employList.size(); // antal anställda
+        double sum = women/count * 100;
+        System.out.println("There are : " + sum   +" % of women working at this company.");
+    }
+
+    public static void percentageUnspec(){
+        double unspec = 0;
+        for (Employee employe: EmployeeList.employList) {
+            if (employe.getGender().equals(Gender.OTHER)){
+                unspec ++;
+            }
+        }
+        double count = EmployeeList.employList.size(); // antal anställda
+        double sum = unspec/count * 100;
+        System.out.println("There are : " + sum   +" % of unspecified people working at this company.");
+    }
+
+
+
+
+
+    // Vi har kvar att göra PER YRKE!
+
+
+
+
+
+
+
+
     /*
-
-
-
-4) total bonus, plussa ihop alla bonusars slutgiltiga summa.
-"Bonus payment overall and in various professional roles."
-
-
-
 
 6) män percentage of the various work categories (?) antal procent som jobbar som vad antagligen.
  Om man är man, hamna i listan manligaproggare, sedan skriver vi ut antal proggare x 100 och antal manliga proggare x 100 med procent tecken... (?)

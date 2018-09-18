@@ -11,30 +11,27 @@ public abstract class Employee {
     private Title title;
     private double salary;
     private static double bonus;
+    private double finalBonus;
     private int age;
     private Gender gender;
-
-
-
     private static int id;
-
-    private static int nextId=0;
+    private static int nextID =0;
 
     public Employee(String name, int age, Gender gender, Title title,double salary, double bonus)  {
-        this.id = Employee.nextId;
-        Employee.nextId++;
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.title=title;
         this.salary=salary;
         this.bonus=bonus;
-
     }
 
 
     public void setAge(int age) {
         this.age = age;
+    }
+    public int getAge() {
+        return age;
     }
 
     public void setName(String name) {
@@ -42,10 +39,6 @@ public abstract class Employee {
     }
     public String getName() {
         return name;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     public Gender getGender() {
@@ -74,8 +67,6 @@ public abstract class Employee {
     public double calcBonus(double salary){
         double finalBonus = salary /100 *bonus;
 
-
-        System.out.println("The bonus of this employee is : " + finalBonus);
         return finalBonus;
 
     }
@@ -83,8 +74,39 @@ public abstract class Employee {
     public void setBonus(double bonus) {
         this.bonus = bonus;
     }
+    public  double getFinalBonus() {
+        return finalBonus;
+    }
     public static int getID() {
         return id;
     }
-//public abstract String toString();
+
+    public int[] setId(Title title) {
+        this.title=title;
+        Employee.id = nextID;
+        boolean updateID=false;
+        int proffID = 0;
+        do {
+            if (title.equals(Title.PROGRAMMER)){
+                proffID=10;
+                nextID++;
+                updateID =true;
+            } if (title.equals(Title.SECRETARY)){
+                proffID=20;
+                nextID++;
+                updateID =true;
+            } if (title.equals(Title.SALESMAN)){
+                proffID=30;
+                nextID++;
+                updateID =true;
+            } if (title.equals(Title.TECHNICIAN)){
+                proffID=40;
+
+                nextID++;
+                updateID =true;
+            }
+
+        }   while (updateID=false);
+        return new int[] {proffID, nextID};
+    }
 }

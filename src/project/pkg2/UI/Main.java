@@ -38,7 +38,6 @@ public class Main {
                     System.out.println("Wrong in Main");
             }
         }
-
     }
 }
 
