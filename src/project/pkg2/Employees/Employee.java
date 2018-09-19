@@ -109,4 +109,19 @@ public abstract class Employee {
         }   while (updateID=false);
         return new int[] {proffID, nextID};
     }
+    @Override
+    public String toString(){
+
+        return "Information about the employee with the EmployeeID: "+ getID()
+                + "\nName: " + getName()
+                + "\nAge: " + getAge()
+                + "\nGender: " + getGender()
+                + "\nWith the roll:"
+                + "\nTitel: " + getTitle()
+                + "\nSalary: " + getSalary() + " kr/month"
+                + "\nBonus: " + getBonus() + " % and that is in kronor: "+ calcBonus
+                (getSalary())
+                +"*************************************\n";
+
+    }
 }
