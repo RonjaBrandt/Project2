@@ -1,6 +1,7 @@
 package project.pkg2.Statistics;
 
-import project.pkg2.UI.Main;
+
+import project.pkg2.UI.Menu;
 
 import static project.pkg2.UI.Main.sc;
 
@@ -20,6 +21,7 @@ public class Statistics {
 
         switch(choiceMenu3) {
             case 1:
+                CalcStatistics.AverageWage();
                 //    EmployeeStatistics.avgWageAtCompany();
                 break;
             case 2:
@@ -38,7 +40,7 @@ public class Statistics {
                 // EmployeeStatistics.menInPerscentAtCompany();
                 break;
             case 0:
-                Main.menu1();
+                Menu.menu1();
                 break;
             default:
                 System.out.println("Wrong in menu 3!");
@@ -46,11 +48,5 @@ public class Statistics {
     }
 
 
-
-
-    @Override
-    public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }

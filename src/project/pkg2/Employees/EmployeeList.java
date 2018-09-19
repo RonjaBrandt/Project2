@@ -1,6 +1,7 @@
 package project.pkg2.Employees;
 
 import project.pkg2.Employees.Proffesions.*;
+import project.pkg2.UI.Menu;
 import project.pkg2.Utilitis.Gender;
 import project.pkg2.Utilitis.Title;
 
@@ -154,7 +155,7 @@ public class EmployeeList extends Employee {
                 deleteEmployeeByID();
                 break;
             case 0:
-                Main.menu1();
+                Menu.menu1();
             default:
                 out.println("Try again!");
         }

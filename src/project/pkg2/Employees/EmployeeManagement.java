@@ -1,7 +1,9 @@
 package project.pkg2.Employees;
 
 
+import project.pkg2.Statistics.CalcStatistics;
 import project.pkg2.UI.Main;
+import project.pkg2.UI.Menu;
 
 
 import static project.pkg2.UI.Main.sc;
@@ -30,12 +32,7 @@ public class EmployeeManagement {
                 EmployeeList.addEmployee();
                 break;
             case 2:
-                    double bonus = 0;
-                for (Employee employe: EmployeeList.employList) {
-                     // bonus = ;
-                }
-
-
+                CalcStatistics.sortByTitle();
                 //EmployeeManagement.removeEmployee();
                 break;
             case 3:
@@ -66,7 +63,7 @@ public class EmployeeManagement {
              *Takes the user back to the first menu i Main
              */
             case 0:
-                Main.menu1();
+                Menu.menu1();
                 break;
             default:
                 System.out.println("Wrong in MEnu 2!");
