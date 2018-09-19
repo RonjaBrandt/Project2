@@ -10,7 +10,6 @@ import java.util.Arrays;
 
 import project.pkg2.UI.Main;
 
-import static java.lang.System.*;
 import static project.pkg2.UI.Main.sc;
 
 public class EmployeeList extends Employee {
@@ -52,9 +51,9 @@ public class EmployeeList extends Employee {
                     gender = Gender.OTHER;
                     break;
                 default:
-                    out.println("Sorry, unrecognized option.");
+                    System.out.println("Sorry, unrecognized option.");
             }
-            out.println("What title has this employee?\n"
+            System.out.println("What title has this employee?\n"
                     + "1. Programmer\n"
                     + "2. Technichian\n"
                     + "3. Secretary\n"
@@ -71,49 +70,48 @@ public class EmployeeList extends Employee {
                 case 1:
                     titles = Title.PROGRAMMER;
                     Programmer programmer = new Programmer(name,age,gender,titles,salary,bonus);
-                    out.println("Enter the salary of the employee: ");
+                    System.out.println("Enter the salary of the employee: ");
                     programmer.setSalary(sc.nextDouble());
                     salary = programmer.getSalary();
-                    out.println("Enter the the bonus for the employee: ");
+                    System.out.println("Enter the the bonus for the employee: ");
                     bonus = sc.nextDouble();
                     programmer.setBonus(bonus);
                     break;
                 case 2:
                     titles = Title.TECHNICIAN;
                     Technician technician = new Technician(name,age,gender,titles,salary,bonus);
-                    out.println("Enter the salary of the employee: ");
+                    System.out.println("Enter the salary of the employee: ");
                     salary = sc.nextDouble();
                     technician.setSalary(salary);
-                    out.println("Enter the the bonus for the employee: ");
+                    System.out.println("Enter the the bonus for the employee: ");
                     bonus = sc.nextDouble();
                     technician.setBonus(bonus);
                     break;
                 case 3:
                     titles = Title.SECRETARY;
                     Secretary secretary = new Secretary(name,age,gender,titles,salary,bonus);
-                    out.println("Enter the salary of the employee: ");
+                    System.out.println("Enter the salary of the employee: ");
                     salary = sc.nextDouble();
                     secretary.setSalary(salary);
-                    out.println("Enter the the bonus for the employee: ");
+                    System.out.println("Enter the the bonus for the employee: ");
                     bonus = sc.nextDouble();
                     secretary.setBonus(bonus);
                     break;
                 case 4:
                     titles = Title.SALESMAN;
                     Salesman salesman = new Salesman(name,age,gender,titles,salary,bonus);
-                    out.println("Enter the salary of the employee: ");
+                    System.out.println("Enter the salary of the employee: ");
                     salary = sc.nextDouble();
                     salesman.setSalary(salary);
-                    out.println("Enter the the bonus for the employee: ");
+                    System.out.println("Enter the the bonus for the employee: ");
                     bonus = sc.nextDouble();
                     salesman.setBonus(bonus);
                     break;
                 default:
-                    out.println("Sorry unrecognized option");
+                    System.out.println("Sorry unrecognized option");
             }
 
             Employee employee = new Employee(name, age, gender,titles,salary,bonus) {
-
             };
             System.out.println("Do you want to add this employee:"
                     + "\nName: " + employee.getName()
@@ -128,22 +126,22 @@ public class EmployeeList extends Employee {
             int choiceDone = sc.nextInt();
             switch (choiceDone) {
                 case 1:
+
                     EmployeeList.employList.add(employee);
-                    out.println("Employee created with the ID-number: "+ Arrays.toString(employee.setId(
-                            employee.getTitle())) +". returning to previous menu.");
+                    System.out.println("Employee created with the ID-number: "+ Employee.getID()+". returning to previous menu.");
                     EmployeeManagement.menu2();
                     break;
                 case 2:
 
                 default:
-                    out.println("Something wrong at the end of employee management");
+                    System.out.println("Something wrong at the end of employee management");
             }
         }
         EmployeeManagement.menu2();
     }
 
     public static void deleteMenu() {
-        out.println("1. Delete employee by name\n"
+        System.out.println("1. Delete employee by name\n"
                 + "2. Delete employee by ID\n"
                 + "0. Back to main menu");
         int choice = sc.nextInt();
@@ -157,34 +155,34 @@ public class EmployeeList extends Employee {
             case 0:
                 Menu.menu1();
             default:
-                out.println("Try again!");
+                System.out.println("Try again!");
         }
     }
 
     public static void deleteEmployeeByName() {
         boolean done = false;
-        out.println("Enter name on person you want to delete: ");
+        System.out.println("Enter name on person you want to delete: ");
         while (done == false) {
             String name = sc.nextLine();
             for (Employee employee : employList) {
                 if (employee.getName().equalsIgnoreCase(name)) {
-                    out.println("New name on employee: ");
+                    System.out.println("New name on employee: ");
                     String newName = sc.nextLine();
-                    out.println("Do you want to set this employees name to: " + newName);
-                    out.println("[1] Yes / [2] No, i want to redo it.");
+                    System.out.println("Do you want to set this employees name to: " + newName);
+                    System.out.println("[1] Yes / [2] No, i want to redo it.");
                     int choice = sc.nextInt();
                     sc.nextLine();
                     switch (choice) {
                         case 1:
                             employee.setName(newName);
-                            out.println("The name has been updated");
+                            System.out.println("The name has been updated");
                             done = true;
                             break;
                         case 2:
-                            out.println("Enter name on person you want to delete: ");
+                            System.out.println("Enter name on person you want to delete: ");
                             break;
                         default:
-                            out.println("ERROR");
+                            System.out.println("ERROR");
                     }
                 }
             }
@@ -194,27 +192,27 @@ public class EmployeeList extends Employee {
 
     public static void deleteEmployeeByID() {
         boolean done = false;
-        out.println("Enter ID on person you want to delete: ");
+        System.out.println("Enter ID on person you want to delete: ");
         while (done == false) {
             int personID = sc.nextInt();
             sc.nextLine();
             for (Employee employee : employList) {
                 if (employee.getID() == personID) {
-                    out.println("Do you want to delete this employee: " + employee);
-                    out.println("[1] Yes / [2] No, wrong employee");
+                    System.out.println("Do you want to delete this employee: " + employee);
+                    System.out.println("[1] Yes / [2] No, wrong employee");
                     int choice = sc.nextInt();
                     sc.nextLine();
                     switch (choice) {
                         case 1:
                             employList.remove(employee);
-                            out.println("The employee has been removed");
+                            System.out.println("The employee has been removed");
                             done = true;
                             break;
                         case 2:
-                            out.println("Enter ID on person you want to delete: ");
+                            System.out.println("Enter ID on person you want to delete: ");
                             break;
                         default:
-                            out.println("ERROR");
+                            System.out.println("ERROR");
                     }
                 }
             }
@@ -222,30 +220,30 @@ public class EmployeeList extends Employee {
         EmployeeManagement.menu2();
     }
 
-    public static void updateNameOnEmployee() {
+    public static void updateNameOfEmployee() {
         boolean done = false;
-        out.println("ID on person you want to update: ");
+        System.out.println("ID on person you want to update: ");
         while (done == false) {
             int personID = sc.nextInt();
             sc.nextLine();
             for (Employee employee : employList) {
                 if (employee.getID() == personID) {
-                    out.println("New name on employee: ");
+                    System.out.println("New name on employee: ");
                     String newName = sc.nextLine();
-                    out.println("Do you want to set this employees name to:" + newName);
-                    out.println("[1] Yes / [2] No, i want to redo it.");
+                    System.out.println("Do you want to set this employees name to:" + newName);
+                    System.out.println("[1] Yes / [2] No, i want to redo it.");
                     int choice = sc.nextInt();
                     sc.nextLine();
                     switch (choice) {
                         case 1:
                             employee.setName(newName);
-                            out.println("The name has been updated");
+                            System.out.println("The name has been updated");
                             break;
                         case 2:
-                            out.println("ID on person you want to update: ");
+                            System.out.println("ID on person you want to update: ");
                             break;
                         default:
-                            out.println("ERROR");
+                            System.out.println("ERROR");
                     }
                 }
             }
@@ -253,30 +251,30 @@ public class EmployeeList extends Employee {
         EmployeeManagement.menu2();
     }
 
-    public static void updateAgeOnEmployee() {
+    public static void updateAgeOfEmployee() {
         boolean done = false;
-        out.println("ID on person you want to update: ");
+        System.out.println("ID on person you want to update: ");
         while (done == false) {
             int personID = sc.nextInt();
             sc.nextLine();
             for (Employee employee : employList) {
                 if (employee.getID() == personID) {
-                    out.println("New age on employee: ");
+                    System.out.println("New age on employee: ");
                     int newAge = sc.nextInt();
-                    out.println("Do you want to set this employees age to:" + newAge);
-                    out.println("[1] Yes / [2] No, i want to redo it.");
+                    System.out.println("Do you want to set this employees age to:" + newAge);
+                    System.out.println("[1] Yes / [2] No, i want to redo it.");
                     int choice = sc.nextInt();
                     sc.nextLine();
                     switch (choice) {
                         case 1:
                             employee.setAge(newAge);
-                            out.println("The age has been updated");
+                            System.out.println("The age has been updated");
                             break;
                         case 2:
-                            out.println("ID on person you want to update: ");
+                            System.out.println("ID on person you want to update: ");
                             break;
                         default:
-                            out.println("ERROR");
+                            System.out.println("ERROR");
                     }
                 }
             }
@@ -284,46 +282,131 @@ public class EmployeeList extends Employee {
         EmployeeManagement.menu2();
     }
 
+
+
     public static void updateDepartmentOfEmployee() {
         boolean done = false;
-        out.println("Enter name on person you want to update: ");
+        System.out.println("Enter name on person you want to update: ");
         while (done == false) {
             Title titles = null;
             String name = sc.nextLine();
             sc.nextLine();
             for (Employee employee : employList) {
                 if (employee.getName().equalsIgnoreCase(name)) {
-                    out.println("Enter department to transfer employee to: ");
+                    System.out.println("Enter department to transfer employee to: ");
                     String newDepartment = sc.nextLine();
-                    out.println("Do you want to set this employees department to:" + newDepartment);
-                    out.println("[1] Yes / [2] No, i want to redo it.");
+                    System.out.println("Do you want to set this employees department to:" + newDepartment);
+                    System.out.println("[1] Yes / [2] No, i want to redo it.");
                     int choice = sc.nextInt();
                     sc.nextLine();
                     switch (choice) {
                         case 1:
                             if (newDepartment.equalsIgnoreCase("Programmer")) {
                                 titles = Title.PROGRAMMER;
-                                out.println("The department has been updated");
+                                System.out.println("The department has been updated");
                                 break;
                             } else if (newDepartment.equalsIgnoreCase("Technician")) {
                                 titles = Title.TECHNICIAN;
-                                out.println("The department has been updated");
+                                System.out.println("The department has been updated");
                                 break;
                             } else if (newDepartment.equalsIgnoreCase("Salesman")) {
                                 titles = Title.SALESMAN;
-                                out.println("The department has been updated");
+                                System.out.println("The department has been updated");
                                 break;
                             } else if (newDepartment.equalsIgnoreCase("Secretary")) {
                                 titles = Title.SECRETARY;
-                                out.println("The department has been updated");
+                                System.out.println("The department has been updated");
                                 break;
                             }
 
                         case 2:
-                            out.println("Enter name on person you want to update: ");
+                            System.out.println("Enter name on person you want to update: ");
                             break;
                         default:
-                            out.println("ERROR");
+                            System.out.println("ERROR");
+                    }
+                }
+            }
+        }
+        EmployeeManagement.menu2();
+    }
+
+    public static void updateSalaryOfEmployee() {
+        boolean done = false;
+        System.out.println("ID on person you want to update: ");
+        while (done == false) {
+            int personID = sc.nextInt();
+            sc.nextLine();
+            for (Employee employee : employList) {
+                if (employee.getID() == personID) {
+                    System.out.println("New salary on employee: ");
+                    double newSalary = sc.nextDouble();
+                    System.out.println("Do you want to set this employees salary to:" + newSalary);
+                    System.out.println("[1] Yes / [2] No, i want to redo it.");
+                    int choice = sc.nextInt();
+                    sc.nextLine();
+                    switch (choice) {
+                        case 1:
+                            employee.setSalary(newSalary);
+                            System.out.println("The salary has been updated");
+                            break;
+                        case 2:
+                            System.out.println("ID on person you want to update: ");
+                            break;
+                        default:
+                            System.out.println("ERROR");
+                    }
+                }
+            }
+        }
+        EmployeeManagement.menu2();
+    }
+    public static void searchEmployeeByName() {
+        boolean done = false;
+        System.out.println("Enter name on employee:  ");
+        while (done == false) {
+            String name = sc.nextLine();
+            for (Employee employee : employList) {
+                if (employee.getName().equalsIgnoreCase(name)) {
+                    System.out.println("Is this the right employee? "+name);
+                    System.out.println("[1] Yes / [2] No, i want to search again");
+                    int choice = sc.nextInt();
+                    sc.nextLine();
+                    switch (choice) {
+                        case 1:
+                            System.out.println(employee.getName()+" "+employee.getAge()+" "+employee.getGender()+" "+employee.getTitle()+" "+employee.getSalary()+" "+employee.getBonus());
+                        case 2:
+                            System.out.println("Enter name on employee: ");
+                            break;
+                        default:
+                            System.out.println("ERROR");
+                    }
+                }
+            }
+        }
+        EmployeeManagement.menu2();
+    }
+
+    public static void searchEmployeeByID() {
+        boolean done = false;
+        System.out.println("Enter ID on employee:  ");
+        while (done == false) {
+            int personID = sc.nextInt();
+            sc.nextLine();
+            for (Employee employee : employList) {
+                if (employee.getID()==personID) {
+                    System.out.println("Is this the right employee? "+employee.getName());
+                    System.out.println("[1] Yes / [2] No, i want to search again");
+                    int choice = sc.nextInt();
+                    sc.nextLine();
+                    switch (choice) {
+                        case 1:
+                            System.out.println(employee.getName()+" "+employee.getAge()+" "+employee.getGender()+" "+employee.getTitle()+" "+employee.getSalary()+" "+employee.getBonus());
+                        case 2:
+                            System.out.println("Enter ID on employee: ");
+                            break;
+                        default:
+                            System.out.println("ERROR");
                     }
                 }
             }
@@ -347,5 +430,6 @@ public class EmployeeList extends Employee {
 
         }
         EmployeeManagement.menu2();
-        }
+    }
+
 }

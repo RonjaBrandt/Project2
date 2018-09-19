@@ -32,28 +32,35 @@ public class EmployeeManagement {
                 EmployeeList.addEmployee();
                 break;
             case 2:
-
+                EmployeeList.deleteMenu();
                 //EmployeeManagement.removeEmployee();
                 break;
             case 3:
+                EmployeeList.updateNameOfEmployee();
                 // EmployeeManagement.updateNameOfEmployee();
                 break;
             case 4:
+                EmployeeList.updateAgeOfEmployee();
                 // EmployeeManagement.updateBirthOfEmployee();
                 break;
             case 5:
+                EmployeeList.updateDepartmentOfEmployee();
                 // EmployeeManagement.updateDepartmentOfEmployee();
                 break;
             case 6:
+                EmployeeList.updateSalaryOfEmployee();
                 // EmployeeManagement.updateSalaryOfEmployee();
                 break;
             case 7:
+                EmployeeList.searchEmployeeByName();
                 // EmployeeManagement.searchEmployeeByName();
                 break;
             case 8:
+                EmployeeList.searchEmployeeByID();
                 // EmployeeManagement.searchEmployeeByID();
                 break;
             case 9:
+
                 // EmployeeManagement.searchEmployeeByDepartment();
                 break;
             case 10:
@@ -70,6 +77,6 @@ public class EmployeeManagement {
         }
     }
 
-   
+
 }
 
