@@ -415,22 +415,7 @@ public class EmployeeList extends Employee {
         EmployeeManagement.menu2();
     }
 
-    public static void printAllEmployees() {
-        for (Employee employee: employList) {
-            System.out.println("Information about the employee with the EmployeeID: "+ Arrays.toString(employee.setId
-                    (employee.getTitle()))
-                    + "\nName: " + employee.getName()
-                    + "\nAge: " + employee.getAge()
-                    + "\nGender: " + employee.getGender()
-                    + "\nWith the roll:"
-                    + "\nTitel: " + employee.getTitle()
-                    + "\nSalary: " + employee.getSalary() + " kr/month"
-                    + "\nBonus: " + employee.getBonus() + " % and that is in kronor: "+ employee.calcBonus
-                    (employee.getSalary())
-                    +"\n");
 
-        }
-    }
     public static void searchEmployeeByDepartment(){    // Lista alla employees per dep.
         ArrayList<Employee> programmers = new ArrayList<>();
         ArrayList<Employee> salesman = new ArrayList<>();
@@ -484,29 +469,21 @@ public class EmployeeList extends Employee {
                         default:
                             System.out.println("Sorry, unrecognized choice.");
 
-                            System.out.println( "dETTA SKA INTE VARA HÄR");
                 }
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         EmployeeManagement.menu2();
     }
+    public static void printAllEmployees() {
+        for (Employee employee: employList) {
+            System.out.println(employee.toString());
+
+        }
+        EmployeeManagement.menu2();
+    }
+
+
+
+
 
 }
