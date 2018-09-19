@@ -32,7 +32,7 @@ public class EmployeeManagement {
                 EmployeeList.addEmployee();
                 break;
             case 2:
-                CalcStatistics.sortByTitle();
+
                 //EmployeeManagement.removeEmployee();
                 break;
             case 3:
@@ -70,9 +70,6 @@ public class EmployeeManagement {
         }
     }
 
-    @Override
-    public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 }
 
