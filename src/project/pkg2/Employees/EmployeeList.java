@@ -7,6 +7,7 @@ import project.pkg2.Utilitis.Title;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 import project.pkg2.UI.Main;
 
@@ -429,6 +430,82 @@ public class EmployeeList extends Employee {
                     +"\n");
 
         }
+    }
+    public static void searchEmployeeByDepartment(){    // Lista alla employees per dep.
+        ArrayList<Employee> programmers = new ArrayList<>();
+        ArrayList<Employee> salesman = new ArrayList<>();
+        ArrayList<Employee> secretary = new ArrayList<>();
+        ArrayList<Employee> technician = new ArrayList<>();
+        Scanner sc1 = new Scanner(System.in);
+        for (Employee employee: EmployeeList.employList) {
+            if (employee.getTitle().equals(Title.PROGRAMMER)) {
+                programmers.add(employee);
+            }
+            if (employee.getTitle().equals(Title.SALESMAN)) {
+                salesman.add(employee);
+            }
+            if (employee.getTitle().equals(Title.SECRETARY)) {
+                secretary.add(employee);
+            }
+            if (employee.getTitle().equals(Title.TECHNICIAN)) {
+                technician.add(employee);
+            }
+        }
+        System.out.println("Please select profession.\n [1] Programmers.\n [2] Salesmen.\n[3] Secretarys.\n[4] Technicians. \n[5] See the menu again.\n [6} Go back.");
+            boolean gogo= true;
+            while (gogo){
+                int choice = sc1.nextInt();
+                switch (choice){
+                    case 1:
+                        for (int i =0; i < programmers.size(); i ++){
+                            System.out.println("In index" + i +" you have : " + programmers.indexOf(i));
+                        }
+                        break;
+                    case 2:
+                        for (int i =0; i < salesman.size(); i ++){
+                            System.out.println("In index" + i +" you have : " + salesman.indexOf(i));
+                        }
+                        break;
+                    case 3:
+                        for (int i =0; i < secretary.size(); i ++){
+                            System.out.println("In index" + i +" you have : " + secretary.indexOf(i));
+                        }
+                        break;
+                    case 4:
+                        for (int i =0; i < technician.size(); i ++){
+                            System.out.println("In index" + i +" you have : " + technician.indexOf(i));
+                        }
+                         break;
+                    case 5 :
+                        System.out.println("Please select profession.\n [1] Programmers.\n [2] Salesmen.\n[3] Secretarys.\n[4] Technicians. \n[5] See the menu again.\n [6} Go back.");
+                        break;
+                    case 6 :
+                        gogo = false;
+                        default:
+                            System.out.println("Sorry, unrecognized choice.");
+
+
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         EmployeeManagement.menu2();
     }
 
