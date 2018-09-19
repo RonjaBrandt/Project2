@@ -484,7 +484,7 @@ public class EmployeeList extends Employee {
                         default:
                             System.out.println("Sorry, unrecognized choice.");
 
-
+                            System.out.println( "dETTA SKA INTE VARA HÄR");
                 }
             }
 
