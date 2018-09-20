@@ -4,13 +4,15 @@ import project.pkg2.Employees.EmployeeManagement;
 import project.pkg2.Statistics.Statistics;
 
 import static project.pkg2.UI.Main.sc;
+
+
 public class Menu {
-    public static void menu1(){
+    public static void startMenu(){
         while (true) {
-            System.out.println("Welcome to the employee program\n"
-                    + "1. Employee management\n"
-                    + "2. Employee statistics\n"
-                    + "0. Exit");
+            System.out.println("Welcome to the employee program."
+                    + "\n[1] Employee management."
+                    + "\n[2] Employee statistics."
+                    + "\n[0] Exit.");
 
             int choiceMenu1 = sc.nextInt();
             sc.nextLine();
@@ -27,6 +29,7 @@ public class Menu {
                     break;
                 default:
                     System.out.println("Wrong in Main");
+                    continue;
             }
         }
     }

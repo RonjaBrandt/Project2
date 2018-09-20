@@ -6,10 +6,7 @@ import project.pkg2.Utilitis.Gender;
 import project.pkg2.Utilitis.Title;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
-
-import project.pkg2.UI.Main;
 
 import static project.pkg2.UI.Main.sc;
 
@@ -154,7 +151,7 @@ public class EmployeeList extends Employee {
                 deleteEmployeeByID();
                 break;
             case 0:
-                Menu.menu1();
+                Menu.startMenu();
             default:
                 System.out.println("Try again!");
         }

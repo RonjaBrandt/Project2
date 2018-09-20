@@ -40,7 +40,7 @@ public class Statistics {
                 // EmployeeStatistics.menInPerscentAtCompany();
                 break;
             case 0:
-                Menu.menu1();
+                Menu.startMenu();
                 break;
             default:
                 System.out.println("Wrong in menu 3!");

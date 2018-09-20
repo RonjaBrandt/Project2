@@ -1,8 +1,6 @@
 package project.pkg2.Employees;
 
 
-import project.pkg2.Statistics.CalcStatistics;
-import project.pkg2.UI.Main;
 import project.pkg2.UI.Menu;
 
 
@@ -70,7 +68,7 @@ public class EmployeeManagement {
              *Takes the user back to the first menu i Main
              */
             case 0:
-                Menu.menu1();
+                Menu.startMenu();
                 break;
             default:
                 System.out.println("Wrong in MEnu 2!");
