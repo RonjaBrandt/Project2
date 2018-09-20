@@ -69,16 +69,18 @@ public class EmployeeManagement {
                         EmployeeList.printAllEmployees();
                         break;
                     case 0:
-                        //Stänger av programmet.
+
                         Menu.startMenu();
                         break;
                     default:
-                        System.out.println("Wrong in MEnu 2!");
+                        System.out.println("Sorry, unrecognized choice.\n");
+                        employeeManagementMenu();
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Input invalid. Please input a number."
                         + "\nInformation for the admin:"
                         + "\n" + e + "\n");
+                continue;
             }
         }
     }

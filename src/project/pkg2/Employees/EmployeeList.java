@@ -31,27 +31,34 @@ public class EmployeeList extends Employee {
             String name = sc.nextLine();
 
 
-            System.out.println("Age of the employee: ");
+
             int age = 0;
-            try {
-                //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
-                age = Integer.parseInt(sc.next());
-                sc.nextLine();
-            } catch (NumberFormatException e) {
-                System.out.println("Input invalid. Please input a number."
-                        + "\nInformation for the admin:"
-                        + "\n" + e + "\n");
-
-
-                System.out.println("Please state the gender of the employee : \n"
-                        + "[1] for male.\n"
-                        + "[2] for female.\n"
-                        + "or [3] for unspecified. ");
-
-
-                Gender gender = null;
-                int choiceGender;
+            while (age==0) {
                 try {
+                    System.out.println("Age of the employee: ");
+                    //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
+                    age = Integer.parseInt(sc.next());
+                    sc.nextLine();
+                } catch (NumberFormatException e) {
+                    System.out.println("Input invalid. Please input a number."
+                            + "\nInformation for the admin:"
+                            + "\n" + e + "\n");
+                    continue;
+                }
+            }
+
+
+
+
+            Gender gender = null;
+            int choiceGender;
+
+            while (gender==null) {
+                try {
+                    System.out.println("Please state the gender of the employee : \n"
+                            + "[1] for male.\n"
+                            + "[2] for female.\n"
+                            + "or [3] for unspecified. ");
                     //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
                     choiceGender = Integer.parseInt(sc.next());
                     sc.nextLine();
@@ -67,26 +74,31 @@ public class EmployeeList extends Employee {
                             break;
                         default:
                             System.out.println("Sorry, unrecognized option.\n");
+                            continue;
                     }
                 } catch (NumberFormatException e1) {
                     System.out.println("Input invalid. Please input a number."
                             + "\nInformation for the admin:"
                             + "\n" + e1 + "\n");
+                    continue;
                 }
 
-
-                System.out.println("What title has this employee?\n"
-                        + "1. Programmer\n"
-                        + "2. Technichian\n"
-                        + "3. Secretary\n"
-                        + "4. Salesman\n"
-                        + "5. Previous Menu");
+            }
 
 
-                int choiceProfession;
-                double salary = 0;
-                double bonus = 0;
-                Title titles = null;
+
+
+
+            int choiceProfession;
+            double salary = 0;
+            double bonus = 0;
+            Title title = null;
+            while (title==null){
+                System.out.println("What title has this employee?"
+                        + "\n[1] Programmer"
+                        + "\n[2]Technician"
+                        + "\n[3] Secretary"
+                        + "\n[4] Salesman");
                 try {
                     //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
                     choiceProfession = Integer.parseInt(sc.next());
@@ -94,96 +106,112 @@ public class EmployeeList extends Employee {
 
                     switch (choiceProfession) {
                         case 1:
-                            titles = Title.PROGRAMMER;
-                            Programmer programmer = new Programmer(name, age, gender, titles, salary, bonus);
+                            title = Title.PROGRAMMER;
+                            Programmer programmer = new Programmer(name, age, gender, title, salary, bonus);
                             System.out.println("Enter the salary of the employee: ");
                             programmer.setSalary(sc.nextDouble());
                             salary = programmer.getSalary();
                             System.out.println("Enter the the bonus for the employee: ");
                             bonus = sc.nextDouble();
                             programmer.setBonus(bonus);
+                            programmer.setId(title);
                             break;
                         case 2:
-                            titles = Title.TECHNICIAN;
-                            Technician technician = new Technician(name, age, gender, titles, salary, bonus);
+                            title = Title.TECHNICIAN;
+                            Technician technician = new Technician(name, age, gender, title, salary, bonus);
                             System.out.println("Enter the salary of the employee: ");
                             salary = sc.nextDouble();
                             technician.setSalary(salary);
                             System.out.println("Enter the the bonus for the employee: ");
                             bonus = sc.nextDouble();
                             technician.setBonus(bonus);
+                            technician.setId(title);
                             break;
                         case 3:
-                            titles = Title.SECRETARY;
-                            Secretary secretary = new Secretary(name, age, gender, titles, salary, bonus);
+                            title = Title.SECRETARY;
+                            Secretary secretary = new Secretary(name, age, gender, title, salary, bonus);
                             System.out.println("Enter the salary of the employee: ");
                             salary = sc.nextDouble();
                             secretary.setSalary(salary);
                             System.out.println("Enter the the bonus for the employee: ");
                             bonus = sc.nextDouble();
                             secretary.setBonus(bonus);
+                            secretary.setId(title);
                             break;
                         case 4:
-                            titles = Title.SALESMAN;
-                            Salesman salesman = new Salesman(name, age, gender, titles, salary, bonus);
+                            title = Title.SALESMAN;
+                            Salesman salesman = new Salesman(name, age, gender, title, salary, bonus);
                             System.out.println("Enter the salary of the employee: ");
                             salary = sc.nextDouble();
                             salesman.setSalary(salary);
                             System.out.println("Enter the the bonus for the employee: ");
                             bonus = sc.nextDouble();
                             salesman.setBonus(bonus);
+                            salesman.setId(title);
                             break;
                         default:
                             System.out.println("Sorry, unrecognized option.\n");
+                            continue;
                     }
                 } catch (NumberFormatException e2) {
                     System.out.println("Input invalid. Please input a number."
                             + "\nInformation for the admin:"
                             + "\n" + e2 + "\n");
-
-
-                    Employee employee = new Employee(name, age, gender, titles, salary, bonus) {
-                    };
-                    System.out.println("Do you want to add this employee:"
-                            + "\nName: " + employee.getName()
-                            + "\nAge: " + employee.getAge()
-                            + "\nGender: " + employee.getGender()
-                            + "\nWith this roll:"
-                            + "\nTitel: " + employee.getTitle()
-                            + "\nSalary: " + employee.getSalary() + " kr/month"
-                            + "\nBonus: " + employee.getBonus() + " % and that is in kronor: " + employee.calcBonus(employee.getSalary())
-                            + "\n"
-                            + "\n[1]Yes | [2] No, I want to redo it");
-
-
-                    int choiceDone;
-                    try {
-                        //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
-                        choiceDone = Integer.parseInt(sc.next());
-                        sc.nextLine();
-
-                        switch (choiceDone) {
-                            case 1:
-
-                                EmployeeList.employList.add(employee);
-                                System.out.println("Employee created with the ID-number: " + Employee.getID() + ". returning to previous menu.");
-                                EmployeeManagement.employeeManagementMenu();
-                                break;
-                            case 2:
-
-                            default:
-                                System.out.println("Sorry, unrecognized option.\n");
-                        }
-                    } catch (NumberFormatException e3) {
-                        System.out.println("Input invalid. Please input a number."
-                                + "\nInformation for the admin:"
-                                + "\n" + e3 + "\n");
-                    }
+                    continue;
                 }
-                EmployeeManagement.employeeManagementMenu();
+            }
+
+
+            Employee employee = new Employee(name, age, gender, title, salary, bonus) {
+            };
+
+            System.out.println("Do you want to add this employee: "
+                    +"\n"+ employee.toStringNoID());
+
+           /* + "\nName: " + employee.getName()
+                    + "\nAge: " + employee.getAge()
+                    + "\nGender: " + employee.getGender()
+                    + "\nWith this roll:"
+                    + "\nTitel: " + employee.getTitle()
+                    + "\nSalary: " + employee.getSalary() + " kr/month"
+                    + "\nBonus: " + employee.getBonus() + " % and that is in kronor: " + employee.calcBonus(employee.getSalary())
+                    + "\n"*/
+
+            int choiceDone;
+            boolean done2 =false;
+            while (done2==false) {
+                try {
+                    System.out.println("\n[1]Yes | [2] No, I want to redo it");
+                    //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
+                    choiceDone = Integer.parseInt(sc.next());
+                    sc.nextLine();
+
+                    switch (choiceDone) {
+                        case 1:
+
+                            EmployeeList.employList.add(employee);
+                            System.out.println("Employee created. Returning to previous menu.");
+                            EmployeeManagement.employeeManagementMenu();
+                            break;
+                        case 2:
+                            continue;
+                        default:
+                            System.out.println("Sorry, unrecognized option.\n");
+                            continue;
+                    }
+                } catch (NumberFormatException e3) {
+                    System.out.println("Input invalid. Please input a number."
+                            + "\nInformation for the admin:"
+                            + "\n" + e3 + "\n");
+                    continue;
+                }
             }
         }
+        EmployeeManagement.employeeManagementMenu();
     }
+
+
+
 
 
     public static void deleteEmployeeMenu() {
@@ -313,6 +341,7 @@ public class EmployeeList extends Employee {
                 System.out.println("Input invalid. Please input a number."
                         + "\nInformation for the admin:"
                         + "\n" + e1 + "\n");
+
             }
 
             EmployeeManagement.employeeManagementMenu();

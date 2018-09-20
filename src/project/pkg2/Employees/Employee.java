@@ -101,7 +101,6 @@ public abstract class Employee {
                 updateID =true;
             } if (title.equals(Title.TECHNICIAN)){
                 proffID=40;
-
                 nextID++;
                 updateID =true;
             }
@@ -112,7 +111,7 @@ public abstract class Employee {
     @Override
     public String toString(){
 
-        return "Information about the employee with the EmployeeID: "+ getID()
+        return "\nInformation about the employee with the EmployeeID: "+ getID()
                 + "\nName: " + getName()
                 + "\nAge: " + getAge()
                 + "\nGender: " + getGender()
@@ -121,6 +120,18 @@ public abstract class Employee {
                 + "\nSalary: " + getSalary() + " kr/month"
                 + "\nBonus: " + getBonus() + " % and that is in kronor: "+ calcBonus(getSalary())
                 +"\n*************************************\n";
+    }
 
+
+    public String toStringNoID(){
+
+        return "\nName: " + getName()
+                + "\nAge: " + getAge()
+                + "\nGender: " + getGender()
+                + "\nWith the roll:"
+                + "\nTitel: " + getTitle()
+                + "\nSalary: " + getSalary() + " kr/month"
+                + "\nBonus: " + getBonus() + " % and that is in kronor: "+ calcBonus(getSalary())
+                +"\n*************************************\n";
     }
 }
