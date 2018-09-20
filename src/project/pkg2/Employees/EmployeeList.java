@@ -9,7 +9,7 @@ import project.pkg2.Utilitis.Gender;
 import project.pkg2.Utilitis.Title;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 import static project.pkg2.UI.Main.sc;
 
@@ -298,7 +298,7 @@ public class EmployeeList extends Employee {
                                 default:
                                     System.out.println("Sorry, unrecognized option.\n");
                             }
-                        } catch (Exception e) {
+                        } catch (NumberFormatException e) {
                             System.out.println("Input invalid. Please input a number."
                                     + "\nInformation for the admin:"
                                     + "\n" + e + "\n");
@@ -391,14 +391,14 @@ public class EmployeeList extends Employee {
                                 default:
                                     System.out.println("Sorry, unrecognized option.\n");
                             }
-                        } catch (Exception e) {
+                        } catch (NumberFormatException e) {
                             System.out.println("Input invalid. Please input a number."
                                     + "\nInformation for the admin:"
                                     + "\n" + e + "\n");
                         }
                     }
                 }
-            } catch (Exception e1) {
+            } catch (NumberFormatException e1) {
                 System.out.println("Input invalid. Please input a number."
                         + "\nInformation for the admin:"
                         + "\n" + e1 + "\n");
@@ -452,7 +452,7 @@ public class EmployeeList extends Employee {
                             default:
                                 System.out.println("ERROR");
                         }
-                    } catch (Exception e) {
+                    } catch (NumberFormatException e) {
                         System.out.println("Input invalid. Please input a number."
                                 + "\nInformation for the admin:"
                                 + "\n" + e + "\n");
@@ -500,13 +500,13 @@ public class EmployeeList extends Employee {
                                 default:
                                     System.out.println("Sorry, unrecognized option.\n");
                             }
-                        } catch (Exception e) {
+                        } catch (NumberFormatException e) {
                             System.out.println("Input invalid. Please input a number."
                                     + "\nInformation for the admin:"
                                     + "\n" + e + "\n");
                         }
 
-                    } catch (Exception e1) {
+                    } catch (NumberFormatException e1) {
                         System.out.println("Input invalid. Please input a number."
                                 + "\nInformation for the admin:"
                                 + "\n" + e1 + "\n");
@@ -547,7 +547,7 @@ public class EmployeeList extends Employee {
                             default:
                                 System.out.println("Sorry, unrecognized option.\n");
                         }
-                    } catch (Exception e) {
+                    } catch (NumberFormatException e) {
                         System.out.println("Input invalid. Please input a number."
                                 + "\nInformation for the admin:"
                                 + "\n" + e + "\n");
@@ -588,7 +588,7 @@ public class EmployeeList extends Employee {
                             default:
                                 System.out.println("Sorry, unrecognized option.\n");
                         }
-                    } catch (Exception e) {
+                    } catch (NumberFormatException e) {
                         System.out.println("Input invalid. Please input a number."
                                 + "\nInformation for the admin:"
                                 + "\n" + e + "\n");
@@ -669,7 +669,7 @@ public class EmployeeList extends Employee {
                     default:
                         System.out.println("Sorry, unrecognized choice.");
                 }
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Input invalid. Please input a number."
                         + "\nInformation for the admin:"
                         + "\n" + e + "\n");

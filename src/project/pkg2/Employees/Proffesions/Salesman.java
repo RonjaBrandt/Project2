@@ -36,7 +36,15 @@ public class Salesman extends Employee {
                 } else if (salary > max) {
                     System.out.println("The salary can't be higher then " + max + "kr");
                 }
-                salary=sc.nextDouble();
+                try {
+                    //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
+                    salary = Double.parseDouble(sc.next());
+                    sc.nextLine();
+                } catch (NumberFormatException e) {
+                    System.out.println("Input invalid. Please input a number."
+                            + "\nInformation for the admin:"
+                            + "\n" + e + "\n");
+                }
             }else{
                 rightSalary=true;
             }
@@ -57,10 +65,7 @@ public class Salesman extends Employee {
     public void setBonus(double bonus) {
         this.bonus = bonus;
     }
-    @Override
-    public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
 
 }

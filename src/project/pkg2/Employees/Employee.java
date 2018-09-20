@@ -119,9 +119,8 @@ public abstract class Employee {
                 + "\nWith the roll:"
                 + "\nTitel: " + getTitle()
                 + "\nSalary: " + getSalary() + " kr/month"
-                + "\nBonus: " + getBonus() + " % and that is in kronor: "+ calcBonus
-                (getSalary())
-                +"*************************************\n";
+                + "\nBonus: " + getBonus() + " % and that is in kronor: "+ calcBonus(getSalary())
+                +"\n*************************************\n";
 
     }
 }

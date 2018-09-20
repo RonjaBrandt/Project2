@@ -33,7 +33,7 @@ public class Menu {
                         break;
                     case 2:
                         //Tar användaren till menyn för statistik.
-                        Statistics.menu3();
+                        Statistics.statisticsMenu();
                         break;
                     case 0:
                         //Stänger av programmet.
@@ -42,10 +42,10 @@ public class Menu {
                     default:
                         System.out.println("Sorry, unrecognized option.\n");
                 }
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Input invalid. Please input a number."
-                        +"\nInformation for the admin:"
-                        +"\n"+e+"\n");
+                        + "\nInformation for the admin:"
+                        + "\n" + e + "\n");
             }
         }
     }

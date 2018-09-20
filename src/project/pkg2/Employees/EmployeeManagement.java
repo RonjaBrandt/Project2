@@ -75,10 +75,10 @@ public class EmployeeManagement {
                     default:
                         System.out.println("Wrong in MEnu 2!");
                 }
-            }catch (Exception e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Input invalid. Please input a number."
-                        +"\nInformation for the admin:"
-                        +"\n"+e+"\n");
+                        + "\nInformation for the admin:"
+                        + "\n" + e + "\n");
             }
         }
     }

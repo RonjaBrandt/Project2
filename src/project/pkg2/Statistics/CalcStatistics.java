@@ -7,8 +7,7 @@ import project.pkg2.Utilitis.Title;
 
 import java.util.Collections;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Scanner;
+
 
 public class CalcStatistics {
 
@@ -132,7 +131,7 @@ public class CalcStatistics {
         ArrayList<Employee> secretary = new ArrayList<>();
         ArrayList<Employee> technician = new ArrayList<>();
         for (Employee employee : EmployeeList.employList) {
-            
+
             //Sorterar in de anställda i repsektive områden
             if ( employee.getTitle().equals(Title.PROGRAMMER)) {
                 programmers.add(employee);
