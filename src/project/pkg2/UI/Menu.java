@@ -50,3 +50,10 @@ public class Menu {
         }
     }
 }
+/*
+              else{
+                    System.out.println("No employee found by the name of "+name+"."
+                    +"\nReturning to previous menu.\n");
+                    EmployeeManagement.employeeManagementMenu();
+                }
+ */
