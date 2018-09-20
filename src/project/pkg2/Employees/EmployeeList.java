@@ -539,7 +539,8 @@ public class EmployeeList extends Employee {
                         sc.nextLine();
                         switch (choice) {
                             case 1:
-                                System.out.println(employee.getName() + " " + employee.getAge() + " " + employee.getGender() + " " + employee.getTitle() + " " + employee.getSalary() + " " + employee.getBonus());
+                                employee.toString();
+                                break;
                             case 2:
                                 System.out.println("Enter name on employee: ");
                                 break;
