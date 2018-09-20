@@ -21,29 +21,35 @@ public class Statistics {
 
         switch(choiceMenu3) {
             case 1:
+                //Räknar ut medellönen
                 CalcStatistics.AverageWage();
-                //    EmployeeStatistics.avgWageAtCompany();
                 break;
             case 2:
-                //    EmployeeStatistics.maxSalaryAtCompany();
+                //Räknar ut den med högst lön
+                CalcStatistics.maxWage();
                 break;
             case 3:
-                //    EmployeeStatistics.minSalaryeAtCompany();
+                //Räknar ut den med minst lön
+                CalcStatistics.minWage();
                 break;
             case 4:
-                //    EmployeeStatistics.totalBonus();
+                //Räknar ut den totala bonusen inom företaget
+                CalcStatistics.totalBonus();
                 break;
             case 5:
-                //    EmployeeStatistics.womanInPercentAtCompany();
+                //Räknar ut hur många procent som är kvinnor i företaget
+                CalcStatistics.percentageWomen();
                 break;
             case 6:
-                // EmployeeStatistics.menInPerscentAtCompany();
+                //Räknar ut hur många procent som är män i företaget
+                CalcStatistics.percentageMen();
                 break;
             case 0:
+                //Går tillbaka till huvudmenyn
                 Menu.startMenu();
                 break;
             default:
-                System.out.println("Wrong in menu 3!");
+                System.out.println("Wrong entry!");
         }
     }
 

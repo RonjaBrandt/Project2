@@ -75,7 +75,7 @@ public class CalcStatistics {
     }
 
 
-    public static void percentagemen() {  // försök få dessa att funka per yrke tack!
+    public static void percentageMen() {  // försök få dessa att funka per yrke tack!
         double men = 0;
         for (Employee employe : EmployeeList.employList) {
             if (employe.getGender().equals(Gender.MALE)) {
@@ -89,6 +89,7 @@ public class CalcStatistics {
 
     public static void percentageWomen() {
         double women = 0;
+        //Söker igenom företaget & om den hittar en kvinna så plussas det på 1 i variabeln "woman"
         for (Employee employe : EmployeeList.employList) {
             if (employe.getGender().equals(Gender.FEMALE)) {
                 women++;
@@ -131,7 +132,8 @@ public class CalcStatistics {
         ArrayList<Employee> secretary = new ArrayList<>();
         ArrayList<Employee> technician = new ArrayList<>();
         for (Employee employee : EmployeeList.employList) {
-
+            
+            //Sorterar in de anställda i repsektive områden
             if ( employee.getTitle().equals(Title.PROGRAMMER)) {
                 programmers.add(employee);
             }
@@ -145,6 +147,7 @@ public class CalcStatistics {
                 technician.add(employee);
             }
         }
+        //Söker igenom alla programmerare & sorteras in i listor baserade på kön
         for (Employee proggare: programmers)
         {
             if (proggare.getGender().equals(Gender.MALE)){
@@ -157,6 +160,7 @@ public class CalcStatistics {
                 progothers ++ ;
             }
         }
+        //Söker igenom alla säljare & sorteras in i listor baserade på kön
         for (Employee seller: salesman)
         {
             if (seller.getGender().equals(Gender.MALE)){
@@ -169,6 +173,7 @@ public class CalcStatistics {
                 saleo ++ ;
             }
         }
+        //Söker igenom alla sekreterare & sorteras in i listor baserade på kön
         for (Employee secre: secretary)
         {
             if (secre.getGender().equals(Gender.MALE)){
@@ -181,6 +186,7 @@ public class CalcStatistics {
                 seco ++ ;
             }
         }
+        //Söker igenom alla tekniker & sorteras in i listor baserade på kön
         for (Employee tech: technician)
         {
             if (tech.getGender().equals(Gender.MALE)){
@@ -193,6 +199,7 @@ public class CalcStatistics {
                 teco ++ ;
             }
         }
+        //Räknar ut hur många procent av respektive kön i respektive område det finns
         double sumprog1 = progmale / programmers.size() * 100;
         double sumprog2 = progfemale / programmers.size() * 100;
         double somprog3 = progothers / programmers.size() * 100;
