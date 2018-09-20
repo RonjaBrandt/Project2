@@ -228,20 +228,33 @@ public class EmployeeList extends Employee {
                     String newName = sc.nextLine();
                     System.out.println("Do you want to set this employees name to: " + newName);
                     System.out.println("[1] Yes / [2] No, i want to redo it.");
-                    int choice = sc.nextInt();
-                    sc.nextLine();
-                    switch (choice) {
-                        case 1:
-                            employee.setName(newName);
-                            System.out.println("The name has been updated");
-                            done = true;
-                            break;
-                        case 2:
-                            System.out.println("Enter name on person you want to delete: ");
-                            break;
-                        default:
-                            System.out.println("Sorry, unrecognized option.\n");
+
+
+                    int choice;
+                    try {
+                        //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
+                        choice = Integer.parseInt(sc.next());
+                        sc.nextLine();
+                        switch (choice) {
+                            case 1:
+                                employee.setName(newName);
+                                System.out.println("The name has been updated");
+                                done = true;
+                                break;
+                            case 2:
+                                System.out.println("Enter name on person you want to delete: ");
+                                break;
+                            default:
+                                System.out.println("Sorry, unrecognized option.\n");
+                        }
+                    }catch (Exception e) {
+                        System.out.println("Input invalid. Please input a number."
+                                +"\nInformation for the admin:"
+                                +"\n"+e+"\n");
                     }
+                }else{
+                    System.out.println("No employee found by the name of "+name+"."
+                    +" Returning to previuce menu");
                 }
             }
         }
@@ -301,7 +314,7 @@ public class EmployeeList extends Employee {
 
 
 
-    
+
     public static void updateNameOfEmployee() {
         boolean done = false;
         System.out.println("ID on person you want to update: ");
@@ -325,7 +338,7 @@ public class EmployeeList extends Employee {
                             System.out.println("ID on person you want to update: ");
                             break;
                         default:
-                            System.out.println("ERROR");
+                            System.out.println("Sorry, unrecognized option.\n");
                     }
                 }
             }
@@ -407,6 +420,8 @@ public class EmployeeList extends Employee {
                         default:
                             System.out.println("ERROR");
                     }
+                }else {
+                    System.out.println();
                 }
             }
         }
