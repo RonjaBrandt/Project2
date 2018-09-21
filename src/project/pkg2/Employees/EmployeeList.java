@@ -632,6 +632,7 @@ public class EmployeeList extends Employee {
         EmployeeManagement.employeeManagementMenu();
     }
 
+    // tthis is poop
 
     public static void searchEmployeeByDepartment() {    // Lista alla employees per dep.
         ArrayList<Employee> programmers = new ArrayList<>();
@@ -664,29 +665,39 @@ public class EmployeeList extends Employee {
         boolean gogo = true;
         while (gogo) {
             int choice;
+            int progs = 0;
+            int sales = 0;
+            int techs = 0;
+            int secre = 0;
+
             try {
                 //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
                 choice = Integer.parseInt(sc.next());
                 sc.nextLine();
                 switch (choice) {
-                    case 1:
-                        for (int i = 0; i < programmers.size(); i++) {
-                            System.out.println("In index" + i + " you have : " + programmers.indexOf(i));
+
+                    case 1:   // prog
+                        for (Employee employee: programmers ) {
+                            progs ++;
+                            System.out.println("In the category programmers we have : " + employee.toString());
                         }
                         break;
-                    case 2:
-                        for (int i = 0; i < salesman.size(); i++) {
-                            System.out.println("In index" + i + " you have : " + salesman.indexOf(i));
+                    case 2: // sale
+                        for (Employee employee: salesman ) {
+                            sales ++;
+                            System.out.println("In the category salesdepartment we have : " + employee.toString());
                         }
                         break;
-                    case 3:
-                        for (int i = 0; i < secretary.size(); i++) {
-                            System.out.println("In index" + i + " you have : " + secretary.indexOf(i));
+                    case 3: // secre
+                        for (Employee employee: secretary ) {
+                            secre ++;
+                            System.out.println("In the category secretary we have : " + employee.toString());
                         }
                         break;
-                    case 4:
-                        for (int i = 0; i < technician.size(); i++) {
-                            System.out.println("In index" + i + " you have : " + technician.indexOf(i));
+                    case 4: // tech
+                        for (Employee employee: technician ) {
+                            techs ++;
+                            System.out.println("In the category technicians we have : " + employee.toString());
                         }
                         break;
                     case 5:
@@ -706,7 +717,6 @@ public class EmployeeList extends Employee {
         }
         EmployeeManagement.employeeManagementMenu();
     }
-
 
     public static void printAllEmployees() {
         for (Employee employee : employList) {

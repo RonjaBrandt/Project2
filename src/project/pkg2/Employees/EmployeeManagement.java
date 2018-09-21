@@ -33,7 +33,8 @@ public class EmployeeManagement {
                         EmployeeList.addEmployee();
                         break;
                     case 2:
-                        EmployeeList.deleteEmployeeMenu();
+                      //  EmployeeList.deleteEmployeeMenu();
+                        EmployeeList.searchEmployeeByDepartment();
                         //EmployeeManagement.removeEmployee();
                         break;
                     case 3:
