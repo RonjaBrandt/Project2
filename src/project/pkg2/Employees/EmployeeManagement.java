@@ -9,18 +9,18 @@ import static project.pkg2.UI.Main.sc;
 public class EmployeeManagement {
 
     public static void employeeManagementMenu() {
-        System.out.println("Employee Management\n"
-                + "1. Register employee\n"
-                + "2. Delete employee\n"
-                + "3. Update name of employee\n"
-                + "4. Update the birthdate of employee\n"
-                + "5. Update the department of employee\n"
-                + "6. Update salary of employee\n"
-                + "7. Search employee by name\n"
-                + "8. Search employee by ID\n"
-                + "9. Search employee by department\n"
-                + "10. Display all employees\n"
-                + "0. Back to main menu");
+        System.out.println("Employee Management menu :\n"
+                + "[1] Register an employee.\n"
+                + "[2] Delete an employee.\n"
+                + "{3] Update the name of an employee.\n"
+                + "[4] Update the birthdate of an employee.\n"
+                + "[5] Update the department of an employee.\n"
+                + "[6] Update the salary of an employee.\n"
+                + "[7] Search for an employee by name.\n"
+                + "[8] Search for an employee by ID.\n"
+                + "[9] Search for employees by department.\n"
+                + "[10} Display all employees.\n"
+                + "[0] Back to main menu.");
         while (true) {
             int choiceMenu2;
             try {
@@ -78,7 +78,7 @@ public class EmployeeManagement {
                         employeeManagementMenu();
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Input invalid. Please input a number."
+                System.out.println("Sorry, you can only use numbers."
                         + "\nInformation for the admin:"
                         + "\n" + e + "\n");
                 continue;

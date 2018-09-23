@@ -27,7 +27,7 @@ public class EmployeeList extends Employee {
         boolean done = false;
         while (done == false) {
 
-            System.out.println("What name has this employee?");
+            System.out.println("Please write the name of the new employee :");
             String name = sc.nextLine();
 
 
@@ -40,7 +40,7 @@ public class EmployeeList extends Employee {
                     age = Integer.parseInt(sc.next());
                     sc.nextLine();
                 } catch (NumberFormatException e) {
-                    System.out.println("Input invalid. Please input a number."
+                    System.out.println("Sorry, you can only use numbers."
                             + "\nInformation for the admin:"
                             + "\n" + e + "\n");
                     continue;
@@ -58,7 +58,7 @@ public class EmployeeList extends Employee {
                     System.out.println("Please state the gender of the employee : \n"
                             + "[1] for male.\n"
                             + "[2] for female.\n"
-                            + "or [3] for unspecified. ");
+                            + "[3] for unspecified. ");
                     //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
                     choiceGender = Integer.parseInt(sc.next());
                     sc.nextLine();
@@ -77,7 +77,7 @@ public class EmployeeList extends Employee {
                             continue;
                     }
                 } catch (NumberFormatException e1) {
-                    System.out.println("Input invalid. Please input a number."
+                    System.out.println("Sorry,you can only use numbers."
                             + "\nInformation for the admin:"
                             + "\n" + e1 + "\n");
                     continue;
@@ -94,11 +94,11 @@ public class EmployeeList extends Employee {
             double bonus = 0;
             Title title = null;
             while (title==null){
-                System.out.println("What title has this employee?"
-                        + "\n[1] Programmer"
-                        + "\n[2]Technician"
-                        + "\n[3] Secretary"
-                        + "\n[4] Salesman");
+                System.out.println("Assing the correct title, please. "
+                        + "\n[1] Programmer."
+                        + "\n[2]Technician."
+                        + "\n[3] Secretary."
+                        + "\n[4] Salesdepartment.");
                 try {
                     //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
                     choiceProfession = Integer.parseInt(sc.next());
@@ -111,7 +111,7 @@ public class EmployeeList extends Employee {
                             System.out.println("Enter the salary of the employee: ");
                             programmer.setSalary(sc.nextDouble());
                             salary = programmer.getSalary();
-                            System.out.println("Enter the the bonus for the employee: ");
+                            System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             programmer.setBonus(bonus);
                             programmer.setId(title);
@@ -122,7 +122,7 @@ public class EmployeeList extends Employee {
                             System.out.println("Enter the salary of the employee: ");
                             salary = sc.nextDouble();
                             technician.setSalary(salary);
-                            System.out.println("Enter the the bonus for the employee: ");
+                            System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             technician.setBonus(bonus);
                             technician.setId(title);
@@ -133,7 +133,7 @@ public class EmployeeList extends Employee {
                             System.out.println("Enter the salary of the employee: ");
                             salary = sc.nextDouble();
                             secretary.setSalary(salary);
-                            System.out.println("Enter the the bonus for the employee: ");
+                            System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             secretary.setBonus(bonus);
                             secretary.setId(title);
@@ -144,7 +144,7 @@ public class EmployeeList extends Employee {
                             System.out.println("Enter the salary of the employee: ");
                             salary = sc.nextDouble();
                             salesman.setSalary(salary);
-                            System.out.println("Enter the the bonus for the employee: ");
+                            System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             salesman.setBonus(bonus);
                             salesman.setId(title);
@@ -154,7 +154,7 @@ public class EmployeeList extends Employee {
                             continue;
                     }
                 } catch (NumberFormatException e2) {
-                    System.out.println("Input invalid. Please input a number."
+                    System.out.println("Sorry, you can only use numbers."
                             + "\nInformation for the admin:"
                             + "\n" + e2 + "\n");
                     continue;
@@ -181,7 +181,7 @@ public class EmployeeList extends Employee {
             boolean done2 =false;
             while (done2==false) {
                 try {
-                    System.out.println("\n[1]Yes | [2] No, I want to redo it");
+                    System.out.println("\n[1]Yes. | [2] No, I want to start over.");
                     //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
                     choiceDone = Integer.parseInt(sc.next());
                     sc.nextLine();
@@ -190,7 +190,7 @@ public class EmployeeList extends Employee {
                         case 1:
 
                             EmployeeList.employList.add(employee);
-                            System.out.println("Employee created. Returning to previous menu.");
+                            System.out.println("Employee created. Returning to the previous menu.");
                             EmployeeManagement.employeeManagementMenu();
                             break;
                         case 2:
@@ -200,7 +200,7 @@ public class EmployeeList extends Employee {
                             continue;
                     }
                 } catch (NumberFormatException e3) {
-                    System.out.println("Input invalid. Please input a number."
+                    System.out.println("Sorry, you can only use numbers."
                             + "\nInformation for the admin:"
                             + "\n" + e3 + "\n");
                     continue;
@@ -215,9 +215,9 @@ public class EmployeeList extends Employee {
 
 
     public static void deleteEmployeeMenu() {
-        System.out.println("1. Delete employee by name\n"
-                + "2. Delete employee by ID\n"
-                + "0. Back to main menu");
+        System.out.println("[1] Delete employee by name.\n"
+                + "[2] Delete employee by ID\n"
+                + "[0] Back to main menu");
         int choice;
         try {
             //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
@@ -237,7 +237,7 @@ public class EmployeeList extends Employee {
                     System.out.println("Sorry, unrecognized option.\n");
             }
         } catch (NumberFormatException e) {
-            System.out.println("Input invalid. Please input a number."
+            System.out.println("Sorry, you can only use numbers."
                     + "\nInformation for the admin:"
                     + "\n" + e + "\n");
         }
@@ -246,7 +246,7 @@ public class EmployeeList extends Employee {
 
     public static void deleteEmployeeByName() {
         boolean done = false;
-        System.out.println("Enter name on person you want to delete: ");
+        System.out.println("Enter the name of the person you want to delete: ");
         while (done == false) {
 
             String name = sc.nextLine();
@@ -254,7 +254,7 @@ public class EmployeeList extends Employee {
                 if (employee.getName().equalsIgnoreCase(name)) {
 
                     System.out.println("Do you want to delete this employee named : " + name);
-                    System.out.println("[1] Yes / [2] No, i want to redo it.");
+                    System.out.println("[1] Yes / [2] No, this is the wrong employee.");
 
                     int choice;
                     try {
@@ -264,7 +264,7 @@ public class EmployeeList extends Employee {
                         switch (choice) {
                             case 1:
                                 employList.remove(employee);
-                                System.out.println("The name has been updated");
+                                System.out.println("The employees name has been updated.");
                                 done = true;
                                 break;
                             case 2:
@@ -275,7 +275,7 @@ public class EmployeeList extends Employee {
                                 System.out.println("Sorry, unrecognized option.\n");
                         }
                     } catch (NumberFormatException e) {
-                        System.out.println("Input invalid. Please input a number."
+                        System.out.println("Sorry, you can only use numbers."
                                 + "\nInformation for the admin:"
                                 + "\n" + e + "\n");
                     }
@@ -294,7 +294,7 @@ public class EmployeeList extends Employee {
 
     public static void deleteEmployeeByID() {
         boolean done = false;
-        System.out.println("Enter ID on person you want to delete: ");
+        System.out.println("Enter the ID of the person you want to delete: ");
         while (done == false) {
             int personID;
             try {
@@ -305,7 +305,7 @@ public class EmployeeList extends Employee {
                 for (Employee employee : employList) {
                     if (employee.getID() == personID) {
                         System.out.println("Do you want to delete this employee: " + employee);
-                        System.out.println("[1] Yes / [2] No, wrong employee");
+                        System.out.println("[1] Yes / [2] No, wrong employee.");
 
 
                         int choice;
@@ -316,7 +316,7 @@ public class EmployeeList extends Employee {
                             switch (choice) {
                                 case 1:
                                     employList.remove(employee);
-                                    System.out.println("The employee has been removed");
+                                    System.out.println("The employee has been removed.");
                                     done = true;
                                     break;
                                 case 2:
@@ -327,7 +327,7 @@ public class EmployeeList extends Employee {
                                     System.out.println("Sorry, unrecognized option.\n");
                             }
                         } catch (NumberFormatException e) {
-                            System.out.println("Input invalid. Please input a number."
+                            System.out.println("Sorry, you can only use numbers."
                                     + "\nInformation for the admin:"
                                     + "\n" + e + "\n");
                         }
@@ -338,7 +338,7 @@ public class EmployeeList extends Employee {
                     }
                 }
             } catch (NumberFormatException e1) {
-                System.out.println("Input invalid. Please input a number."
+                System.out.println("Sorry, you can only use numbers."
                         + "\nInformation for the admin:"
                         + "\n" + e1 + "\n");
 
@@ -351,22 +351,22 @@ public class EmployeeList extends Employee {
 
     public static void updateNameOfEmployee() {
         boolean done = false;
-        System.out.println("ID on person you want to update: ");
+        System.out.println("Enter the ID of the employee you want to update: ");
         while (done == false) {
             int personID = sc.nextInt();
             sc.nextLine();
             for (Employee employee : employList) {
                 if (employee.getID() == personID) {
-                    System.out.println("New name on employee: ");
+                    System.out.println("New name of the employee: ");
                     String newName = sc.nextLine();
                     System.out.println("Do you want to set this employees name to:" + newName);
-                    System.out.println("[1] Yes / [2] No, i want to redo it.");
+                    System.out.println("[1] Yes / [2] No.");
                     int choice = sc.nextInt();
                     sc.nextLine();
                     switch (choice) {
                         case 1:
                             employee.setName(newName);
-                            System.out.println("The name has been updated");
+                            System.out.println("The name of the employee has  been updated.");
                             break;
                         case 2:
                             updateNameOfEmployee();
@@ -405,7 +405,7 @@ public class EmployeeList extends Employee {
                             newAge = Integer.parseInt(sc.next());
                             sc.nextLine();
                             System.out.println("Do you want to set this employees age to:" + newAge);
-                            System.out.println("[1] Yes / [2] No, i want to redo it.");
+                            System.out.println("[1] Yes / [2] No.");
                             int choice = sc.nextInt();
                             sc.nextLine();
                             switch (choice) {
@@ -421,14 +421,14 @@ public class EmployeeList extends Employee {
                                     System.out.println("Sorry, unrecognized option.\n");
                             }
                         } catch (NumberFormatException e) {
-                            System.out.println("Input invalid. Please input a number."
+                            System.out.println("Sorry,you can only use numbers."
                                     + "\nInformation for the admin:"
                                     + "\n" + e + "\n");
                         }
                     }
                 }
             } catch (NumberFormatException e1) {
-                System.out.println("Input invalid. Please input a number."
+                System.out.println("Sorry,you can only use numbers."
                         + "\nInformation for the admin:"
                         + "\n" + e1 + "\n");
             }
@@ -476,13 +476,13 @@ public class EmployeeList extends Employee {
                                 }
 
                             case 2:
-                                System.out.println("Enter name on person you want to update: ");
+                                System.out.println("Enter name on employee you want to update: ");
                                 break;
                             default:
                                 System.out.println("ERROR");
                         }
                     } catch (NumberFormatException e) {
-                        System.out.println("Input invalid. Please input a number."
+                        System.out.println("Sorry,you can only use numbers."
                                 + "\nInformation for the admin:"
                                 + "\n" + e + "\n");
                     }
@@ -498,13 +498,13 @@ public class EmployeeList extends Employee {
 
     public static void updateSalaryOfEmployee() {
         boolean done = false;
-        System.out.println("ID on person you want to update: ");
+        System.out.println("Enter the ID of the employee you want to update : ");
         while (done == false) {
             int personID = sc.nextInt();
             sc.nextLine();
             for (Employee employee : employList) {
                 if (employee.getID() == personID) {
-                    System.out.println("New salary on employee: ");
+                    System.out.println("New salary of the employee: ");
                     double newSalary;
                     try {
                         //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
@@ -521,7 +521,7 @@ public class EmployeeList extends Employee {
                             switch (choice) {
                                 case 1:
                                     employee.setSalary(newSalary);
-                                    System.out.println("The salary has been updated");
+                                    System.out.println("The salary has been updated.");
                                     break;
                                 case 2:
                                     System.out.println("ID on person you want to update: ");
@@ -530,19 +530,19 @@ public class EmployeeList extends Employee {
                                     System.out.println("Sorry, unrecognized option.\n");
                             }
                         } catch (NumberFormatException e) {
-                            System.out.println("Input invalid. Please input a number."
+                            System.out.println("Sorry,you can only use numbers."
                                     + "\nInformation for the admin:"
                                     + "\n" + e + "\n");
                         }
 
                     } catch (NumberFormatException e1) {
-                        System.out.println("Input invalid. Please input a number."
+                        System.out.println("Sorry,you can only use numbers."
                                 + "\nInformation for the admin:"
                                 + "\n" + e1 + "\n");
                     }
 
                 } else {
-                    System.out.println("No employee found by the id of " + personID + "."
+                    System.out.println("No employee found with the ID of " + personID + "."
                             + "\nReturning to previous menu.\n");
                     EmployeeManagement.employeeManagementMenu();
                 }
@@ -554,7 +554,7 @@ public class EmployeeList extends Employee {
 
     public static void searchEmployeeByName() {
         boolean done = false;
-        System.out.println("Enter name on employee: ");
+        System.out.println("Enter the name of the employee: ");
         while (done == false) {
             String name = sc.nextLine();
             for (Employee employee : employList) {
@@ -577,7 +577,7 @@ public class EmployeeList extends Employee {
                                 System.out.println("Sorry, unrecognized option.\n");
                         }
                     } catch (NumberFormatException e) {
-                        System.out.println("Input invalid. Please input a number."
+                        System.out.println("Sorry,you can only use numbers."
                                 + "\nInformation for the admin:"
                                 + "\n" + e + "\n");
                     }
@@ -593,7 +593,7 @@ public class EmployeeList extends Employee {
 
     public static void searchEmployeeByID() {
         boolean done = false;
-        System.out.println("Enter ID on employee:  ");
+        System.out.println("Enter the ID of the employee :  ");
         while (done == false) {
             int personID = sc.nextInt();
             sc.nextLine();
@@ -618,7 +618,7 @@ public class EmployeeList extends Employee {
                                 System.out.println("Sorry, unrecognized option.\n");
                         }
                     } catch (NumberFormatException e) {
-                        System.out.println("Input invalid. Please input a number."
+                        System.out.println("Sorry,you can only use numbers."
                                 + "\nInformation for the admin:"
                                 + "\n" + e + "\n");
                     }
@@ -691,7 +691,7 @@ public class EmployeeList extends Employee {
                     case 3: // secre
                         for (Employee employee: secretary ) {
                             secre ++;
-                            System.out.println("In the category secretary we have : " + employee.toString());
+                            System.out.println("In the category secretarys we have : " + employee.toString());
                         }
                         break;
                     case 4: // tech
@@ -710,7 +710,7 @@ public class EmployeeList extends Employee {
                         System.out.println("Sorry, unrecognized choice.");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Input invalid. Please input a number."
+                System.out.println("Sorry,you can only use numbers."
                         + "\nInformation for the admin:"
                         + "\n" + e + "\n");
             }

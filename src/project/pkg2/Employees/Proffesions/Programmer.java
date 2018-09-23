@@ -14,8 +14,8 @@ public class Programmer extends Employee {
     private double salary;
     private double bonus;
     private Title title;
-    private double min =100;
-    private double max =1000;
+    private double min =24500;
+    private double max =48000;
 
     public Programmer(String name, int age, Gender gender, Title title, double salary, double bonus) {
         super(name, age, gender, title, salary, bonus);
@@ -37,9 +37,9 @@ public class Programmer extends Employee {
         do{
             if(salary<min||salary>max) {
                 if (salary < min) {
-                    System.out.println("The salary must be higher then " + min + "kr");
+                    System.out.println("The salary must be higher then " + min + "kr.");
                 } else if (salary > max) {
-                    System.out.println("The salary can't be higher then " + max + "kr");
+                    System.out.println("The salary can't be higher then " + max + "kr.");
                 }
 
                 try {
@@ -47,7 +47,7 @@ public class Programmer extends Employee {
                     salary = Double.parseDouble(sc.next());
                     sc.nextLine();
                 } catch (NumberFormatException e) {
-                    System.out.println("Input invalid. Please input a number."
+                    System.out.println("Sorry, you can only use numbers."
                             + "\nInformation for the admin:"
                             + "\n" + e + "\n");
                 }

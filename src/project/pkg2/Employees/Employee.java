@@ -115,10 +115,10 @@ public abstract class Employee {
                 + "\nName: " + getName()
                 + "\nAge: " + getAge()
                 + "\nGender: " + getGender()
-                + "\nWith the roll:"
+                + "\nHired as:"
                 + "\nTitel: " + getTitle()
                 + "\nSalary: " + getSalary() + " kr/month"
-                + "\nBonus: " + getBonus() + " % and that is in kronor: "+ calcBonus(getSalary())
+                + "\nBonus: " + getBonus() + " % and in kronor : "+ calcBonus(getSalary())
                 +"\n*************************************\n";
     }
 
@@ -128,10 +128,10 @@ public abstract class Employee {
         return "\nName: " + getName()
                 + "\nAge: " + getAge()
                 + "\nGender: " + getGender()
-                + "\nWith the roll:"
+                + "\nHired as:"
                 + "\nTitel: " + getTitle()
                 + "\nSalary: " + getSalary() + " kr/month"
-                + "\nBonus: " + getBonus() + " % and that is in kronor: "+ calcBonus(getSalary())
+                + "\nBonus: " + getBonus() + " % and in kronor: "+ calcBonus(getSalary())
                 +"\n*************************************\n";
     }
 }

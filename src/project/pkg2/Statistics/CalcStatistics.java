@@ -17,7 +17,7 @@ public class CalcStatistics {
             avrwage = avrwage + (employee.getSalary());
         }
         double finalecut = avrwage / EmployeeList.employList.size();
-        System.out.println("The average pay in this company is : " + finalecut);
+        System.out.println("The average salary of this company is : " + finalecut);
     }
 
     public static void manOrWoman() {
@@ -52,7 +52,7 @@ public class CalcStatistics {
         }
         Collections.sort(wages);
         double last = wages.get(wages.size() - 1);
-        System.out.println("The highest wage in this company is : " + last);
+        System.out.println("The highest salary of this company is : " + last);
     }
 
     public static void minWage() {
@@ -61,7 +61,7 @@ public class CalcStatistics {
             wages.add(employee.getSalary());
         }
         Collections.sort(wages);
-        System.out.println("The lowest wage in the company is : " + wages.get(0));
+        System.out.println("The lowest salary of the company is : " + wages.get(0));
     }
 
 
