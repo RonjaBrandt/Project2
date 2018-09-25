@@ -19,6 +19,7 @@ public class Programmer extends Employee {
 
 
 
+
     private int depId = 10;
 
     public Programmer(String name, int age, Gender gender, Title title, double salary, double bonus) {
@@ -88,5 +89,8 @@ public class Programmer extends Employee {
     }
 
 
+    public void setId(){
+        nextID++;
+    }
 }
 

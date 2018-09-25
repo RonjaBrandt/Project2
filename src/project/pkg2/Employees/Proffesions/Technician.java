@@ -77,5 +77,7 @@ public class Technician extends Employee {
         return depIdT;
     }
 
-
+    public void setId(){
+        nextID++;
+    }
 }

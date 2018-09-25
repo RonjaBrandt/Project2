@@ -72,7 +72,9 @@ public class Salesman extends Employee {
     public double getDepIdSa() {
         return depIdSa;
     }
-
+    public void setId(){
+        nextID++;
+    }
 
 }
 

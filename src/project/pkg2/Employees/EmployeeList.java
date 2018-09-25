@@ -103,7 +103,7 @@ public class EmployeeList extends Employee {
                             System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             programmer.setBonus(bonus);
-
+                            programmer.setId();
                             break;
                         case 2:
                             title = Title.TECHNICIAN;
@@ -114,7 +114,7 @@ public class EmployeeList extends Employee {
                             System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             technician.setBonus(bonus);
-
+                            technician.setId();
                             break;
                         case 3:
                             title = Title.SECRETARY;
@@ -125,7 +125,7 @@ public class EmployeeList extends Employee {
                             System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             secretary.setBonus(bonus);
-
+                            secretary.setId();
                             break;
                         case 4:
                             title = Title.SALESMAN;
@@ -136,7 +136,7 @@ public class EmployeeList extends Employee {
                             System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             salesman.setBonus(bonus);
-
+                            salesman.setId();
                             break;
                         default:
                             System.out.println("Sorry, unrecognized option.\n");

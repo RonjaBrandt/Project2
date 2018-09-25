@@ -19,7 +19,7 @@ public abstract class Employee {
     private int age;
     private Gender gender;
     private  int id;
-    private static int nextID=0;
+    public static int nextID=0;
 
 
     public Employee(String name, int age, Gender gender, Title title, double salary, double bonus)  {
@@ -29,6 +29,8 @@ public abstract class Employee {
         this.title=title;
         this.salary=salary;
         this.bonus=bonus;
+
+        this.id=nextID;
 
     }
 
@@ -85,9 +87,11 @@ public abstract class Employee {
     }
 
     public int getId() {
-        this.id=nextID;
-         nextID= nextID+1;
-        return nextID;
+        return id;
+    }
+
+    public void setId(){
+        nextID++;
     }
 
 

@@ -79,5 +79,7 @@ public class Secretary extends Employee {
     public double getDepIdSe() {
         return depIdSe;
     }
-
+    public void setId(){
+        nextID++;
+    }
 }
