@@ -97,44 +97,123 @@ public class EmployeeList extends Employee {
                         case 1:
                             title = Title.PROGRAMMER;
                             Programmer programmer = new Programmer(name, age, gender, title, salary, bonus);
-                            System.out.println("Enter the salary of the employee: ");
-                            programmer.setSalary(sc.nextDouble());
+
+                            while (salary==0){
+                                System.out.println("Enter the salary of the employee: ");
+                                try {
+                                    salary = Double.parseDouble(sc.next());
+                                    sc.nextLine();
+                                }catch (Exception e){
+                                    System.out.println("Sorry, you can only use numbers."
+                                            + "\nInformation for the admin:"
+                                            + "\n" + e + "\n");
+                                }
+                            }
+
+                            programmer.setSalary(salary);
                             salary = programmer.getSalary();
-                            System.out.println("Enter the the bonus for the employee in percentage, please: ");
-                            bonus = sc.nextDouble();
+
+                            while (bonus==0) {
+                                System.out.println("Enter the the bonus for the employee in percentage, please: ");
+                                try {
+                                    bonus =  Double.parseDouble(sc.next());
+                                    sc.nextLine();
+                                }catch (Exception e){
+                                    System.out.println("Sorry, you can only use numbers."
+                                            + "\nInformation for the admin:"
+                                            + "\n" + e + "\n");
+                                }
+                            }
                             programmer.setBonus(bonus);
                             programmer.setId();
                             break;
                         case 2:
                             title = Title.TECHNICIAN;
                             Technician technician = new Technician(name, age, gender, title, salary, bonus);
-                            System.out.println("Enter the salary of the employee: ");
-                            technician.setSalary(sc.nextDouble());
+                            while (salary==0){
+                                System.out.println("Enter the salary of the employee: ");
+                                try {
+                                    salary = Double.parseDouble(sc.next());
+                                    sc.nextLine();
+                                }catch (Exception e){
+                                    System.out.println("Sorry, you can only use numbers."
+                                            + "\nInformation for the admin:"
+                                            + "\n" + e + "\n");
+                                }
+                            }
+                            technician.setSalary(salary);
                             salary = technician.getSalary();
-                            System.out.println("Enter the the bonus for the employee in percentage, please: ");
-                            bonus = sc.nextDouble();
+                            while (bonus==0) {
+                                System.out.println("Enter the the bonus for the employee in percentage, please: ");
+                                try {
+                                    bonus =  Double.parseDouble(sc.next());
+                                    sc.nextLine();
+                                }catch (Exception e){
+                                    System.out.println("Sorry, you can only use numbers."
+                                            + "\nInformation for the admin:"
+                                            + "\n" + e + "\n");
+                                }
+                            }
                             technician.setBonus(bonus);
                             technician.setId();
                             break;
                         case 3:
                             title = Title.SECRETARY;
                             Secretary secretary = new Secretary(name, age, gender, title, salary, bonus);
-                            System.out.println("Enter the salary of the employee: ");
-                            secretary.setSalary(sc.nextDouble());
+                            while (salary==0){
+                                System.out.println("Enter the salary of the employee: ");
+                                try {
+                                    salary = Double.parseDouble(sc.next());
+                                    sc.nextLine();
+                                }catch (Exception e){
+                                    System.out.println("Sorry, you can only use numbers."
+                                            + "\nInformation for the admin:"
+                                            + "\n" + e + "\n");
+                                }
+                            }
+                            secretary.setSalary(salary);
                             salary = secretary.getSalary();
                             System.out.println("Enter the the bonus for the employee in percentage, please: ");
-                            bonus = sc.nextDouble();
-                            secretary.setBonus(bonus);
+                            while (bonus==0) {
+                                System.out.println("Enter the the bonus for the employee in percentage, please: ");
+                                try {
+                                    bonus =  Double.parseDouble(sc.next());
+                                    sc.nextLine();
+                                }catch (Exception e){
+                                    System.out.println("Sorry, you can only use numbers."
+                                            + "\nInformation for the admin:"
+                                            + "\n" + e + "\n");
+                                }
+                            }
                             secretary.setId();
                             break;
                         case 4:
                             title = Title.SALESMAN;
                             Salesman salesman = new Salesman(name, age, gender, title, salary, bonus);
-                            System.out.println("Enter the salary of the employee: ");
-                            salesman.setSalary(sc.nextDouble());
+                            while (salary==0){
+                                System.out.println("Enter the salary of the employee: ");
+                                try {
+                                    salary = Double.parseDouble(sc.next());
+                                    sc.nextLine();
+                                }catch (Exception e){
+                                    System.out.println("Sorry, you can only use numbers."
+                                            + "\nInformation for the admin:"
+                                            + "\n" + e + "\n");
+                                }
+                            }
+                            salesman.setSalary(salary);
                             salary = salesman.getSalary();
-                            System.out.println("Enter the the bonus for the employee in percentage, please: ");
-                            bonus = sc.nextDouble();
+                            while (bonus==0) {
+                                System.out.println("Enter the the bonus for the employee in percentage, please: ");
+                                try {
+                                    bonus =  Double.parseDouble(sc.next());
+                                    sc.nextLine();
+                                }catch (Exception e){
+                                    System.out.println("Sorry, you can only use numbers."
+                                            + "\nInformation for the admin:"
+                                            + "\n" + e + "\n");
+                                }
+                            }
                             salesman.setBonus(bonus);
                             salesman.setId();
                             break;
