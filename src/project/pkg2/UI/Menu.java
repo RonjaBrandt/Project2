@@ -13,8 +13,7 @@ import static project.pkg2.UI.Main.sc;
 public class Menu {
     public static void startMenu() {
         while (true) {
-            System.out.println("Welcome to the employee program." +
-                    "\nPlease choose :"
+            System.out.println("Welcome to the employee program."
                     + "\n[1] Employee management."
                     + "\n[2] Employee statistics."
                     + "\n[0] Exit.");
@@ -34,7 +33,7 @@ public class Menu {
                         break;
                     case 2:
                         //Tar användaren till menyn för statistik.
-                        Statistics.statisticsMenu();
+                        Statistics.menu3();
                         break;
                     case 0:
                         //Stänger av programmet.
@@ -43,18 +42,11 @@ public class Menu {
                     default:
                         System.out.println("Sorry, unrecognized option.\n");
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("Sorry,you can only use numbers."
-                        + "\nInformation for the admin:"
-                        + "\n" + e + "\n");
+            } catch (Exception e) {
+                System.out.println("Input invalid. Please input a number."
+                        +"\nInformation for the admin:"
+                        +"\n"+e+"\n");
             }
         }
     }
 }
-/*
-              else{
-                    System.out.println("No employee found by the name of "+name+"."
-                    +"\nReturning to previous menu.\n");
-                    EmployeeManagement.employeeManagementMenu();
-                }
- */
