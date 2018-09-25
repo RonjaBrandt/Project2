@@ -109,8 +109,8 @@ public class EmployeeList extends Employee {
                             title = Title.TECHNICIAN;
                             Technician technician = new Technician(name, age, gender, title, salary, bonus);
                             System.out.println("Enter the salary of the employee: ");
-                            salary = sc.nextDouble();
-                            technician.setSalary(salary);
+                            technician.setSalary(sc.nextDouble());
+                            salary = technician.getSalary();
                             System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             technician.setBonus(bonus);
@@ -120,8 +120,8 @@ public class EmployeeList extends Employee {
                             title = Title.SECRETARY;
                             Secretary secretary = new Secretary(name, age, gender, title, salary, bonus);
                             System.out.println("Enter the salary of the employee: ");
-                            salary = sc.nextDouble();
-                            secretary.setSalary(salary);
+                            secretary.setSalary(sc.nextDouble());
+                            salary = secretary.getSalary();
                             System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             secretary.setBonus(bonus);
@@ -131,8 +131,8 @@ public class EmployeeList extends Employee {
                             title = Title.SALESMAN;
                             Salesman salesman = new Salesman(name, age, gender, title, salary, bonus);
                             System.out.println("Enter the salary of the employee: ");
-                            salary = sc.nextDouble();
-                            salesman.setSalary(salary);
+                            salesman.setSalary(sc.nextDouble());
+                            salary = salesman.getSalary();
                             System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             salesman.setBonus(bonus);
@@ -170,8 +170,9 @@ public class EmployeeList extends Employee {
 
                     switch (choiceDone) {
                         case 1:
-                            EmployeeList.countPlus();
+
                             EmployeeList.employList.add(employee);
+
                             System.out.println("Employee created. Returning to the previous menu.");
                             EmployeeManagement.employeeManagementMenu();
                             break;
@@ -377,7 +378,7 @@ public class EmployeeList extends Employee {
 
     public static void updateAgeOfEmployee() {
         boolean done = false;
-        System.out.println("ID of the employee you want to update: "); //TODO Välja mellan ID eller namn?
+        System.out.println("ID of the employee you want to update: ");
         while (!done) {
             int personID;
             try {

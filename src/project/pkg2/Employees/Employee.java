@@ -19,7 +19,7 @@ public abstract class Employee {
     private int age;
     private Gender gender;
     private  int id;
-    private static   int nextID=0;
+    private static int nextID=0;
 
 
     public Employee(String name, int age, Gender gender, Title title, double salary, double bonus)  {
@@ -29,6 +29,7 @@ public abstract class Employee {
         this.title=title;
         this.salary=salary;
         this.bonus=bonus;
+
     }
 
 
@@ -83,16 +84,12 @@ public abstract class Employee {
         return finalBonus;
     }
 
-    public  int getId() {
-        id =nextID;
-        nextID++;
+    public int getId() {
+        this.id=nextID;
+         nextID= nextID+1;
         return nextID;
     }
 
-    public  void  setId() {
-        this.id = nextID;
-
-    }
 
     @Override
     public String toString(){
@@ -121,16 +118,6 @@ public abstract class Employee {
                 +"\n*************************************\n";
     }
 
-
-    public static int countPlus(){
-
-        for (Employee employee: EmployeeList.employList) {
-            nextID ++ ;
-        }
-
-
-        return  nextID;
-    }
 
 
 
