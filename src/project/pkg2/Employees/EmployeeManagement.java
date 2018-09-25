@@ -64,7 +64,7 @@ public class EmployeeManagement {
                         break;
                     default:
                         System.out.println("Sorry, unrecognized choice.\n");
-                        employeeManagementMenu();
+                        continue;
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Sorry, you can only use numbers."
@@ -74,7 +74,5 @@ public class EmployeeManagement {
             }
         }
     }
-
-
 }
 

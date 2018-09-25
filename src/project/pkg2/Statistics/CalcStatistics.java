@@ -4,6 +4,7 @@ import project.pkg2.Employees.Employee;
 import project.pkg2.Employees.EmployeeList;
 import project.pkg2.Utilitis.Gender;
 import project.pkg2.Utilitis.Title;
+import static project.pkg2.UI.Main.sc;
 
 import java.util.Collections;
 import java.util.ArrayList;
@@ -66,11 +67,79 @@ public class CalcStatistics {
 
 
     public static void totalBonus() {
-        double sum = 0;
-        for (Employee employee : EmployeeList.employList) {
-            sum = sum + employee.getFinalBonus();
+        double totalSum = 0;
+        double programmerSum = 0;
+        double salesmenSum= 0;
+        double technicianSum = 0;
+        double secretarySum = 0;
+        int choice;
+        while(true){
+            System.out.println("Choose how you want to see total bonus:"
+                    + "\n[1] Total bonus for all employees."
+                    + "\n[2] Total bonus for all Programmers."
+                    + "\n{3] Total bonus for all Salesmen."
+                    + "\n[4] Total bonus for all Technicians."
+                    + "\n[5] Total bonus for all Secretaries."
+                    + "\n[0] Return to previous menu.");
+            try{
+                choice= Integer.parseInt(sc.next());
+                sc.nextLine();
+                switch (choice){
+                    case 1:
+                        for (Employee employee : EmployeeList.employList) {
+                            totalSum += employee.getFinalBonus();
+                        }
+                        System.out.println("You are paying a total of : " + totalSum + " as bonus to all employees.");
+                        break;
+                    case 2:
+                        for (Employee employee : EmployeeList.employList) {
+                            if (employee.getTitle().equals(Title.PROGRAMMER)) {
+                                programmerSum += employee.getFinalBonus();
+                            }
+                        }
+                        System.out.println("You are paying a total of : " + programmerSum
+                                +" as bonus to all programmers.");
+                        break;
+                    case 3:
+                        for (Employee employee : EmployeeList.employList) {
+                            if (employee.getTitle().equals(Title.SALESMAN)) {
+                                salesmenSum += employee.getFinalBonus();
+                            }
+                        }
+                        System.out.println("You are paying a total of : " + salesmenSum
+                                +" as bonus to all programmers.");
+                        break;
+                    case 4:
+                        for (Employee employee : EmployeeList.employList) {
+                            if (employee.getTitle().equals(Title.TECHNICIAN)) {
+                                technicianSum+= employee.getFinalBonus();
+                            }
+                        }
+                        System.out.println("You are paying a total of : " + technicianSum
+                                +" as bonus to all programmers.");
+                        break;
+                    case 5:
+                        for (Employee employee : EmployeeList.employList) {
+                            if (employee.getTitle().equals(Title.SECRETARY)) {
+                                secretarySum+= employee.getFinalBonus();
+                            }
+                        }
+                        System.out.println("You are paying a total of : " + secretarySum
+                                +" as bonus to all programmers.");
+                        break;
+                    case 0:
+                        Statistics.statisticsMenu();
+                        break;
+                    default:
+                        System.out.println("Sorry, unrecognized choice.\n");
+                }
+            }catch (Exception e){
+                System.out.println("Sorry, you can only use numbers."
+                        + "\nInformation for the admin:"
+                        + "\n" + e + "\n");
+                continue;
+            }
         }
-        System.out.println("You are paying a total of : " + sum + " as bonus to all employees.");
     }
 
 
