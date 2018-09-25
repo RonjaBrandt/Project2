@@ -13,8 +13,8 @@ public class Secretary extends Employee {
     private double salary;
     private double bonus;
     private Title title;
-    private double min =100;
-    private double max =1000;
+    private double min =20000;
+    private double max =30000;
 
     public Secretary(String name, int age, Gender gender, Title title, double salary, double bonus) {
         super(name, age, gender, title, salary, bonus);
@@ -36,11 +36,19 @@ public class Secretary extends Employee {
         do{
             if(salary<min||salary>max) {
                 if (salary < min) {
-                    System.out.println("The salary must be higher then " + min + "kr");
+                    System.out.println("The salary must be higher then " + min + "kr.");
                 } else if (salary > max) {
-                    System.out.println("The salary can't be higher then " + max + "kr");
+                    System.out.println("The salary can't be higher then " + max + "kr.");
                 }
-                salary=sc.nextDouble();
+                try {
+                    //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
+                    salary = Double.parseDouble(sc.next());
+                    sc.nextLine();
+                } catch (NumberFormatException e) {
+                    System.out.println("Sorry, you can only use numbers."
+                            + "\nInformation for the admin:"
+                            + "\n" + e + "\n");
+                }
             }else{
                 rightSalary=true;
             }
@@ -63,11 +71,6 @@ public class Secretary extends Employee {
         this.bonus = bonus;
     }
 
-
-    @Override
-    public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 
 }
