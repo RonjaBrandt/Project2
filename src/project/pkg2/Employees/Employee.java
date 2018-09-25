@@ -19,7 +19,7 @@ public abstract class Employee {
     private int age;
     private Gender gender;
     private  int id;
-    private  int nextID=0;
+    private static   int nextID=0;
 
 
     public Employee(String name, int age, Gender gender, Title title, double salary, double bonus)  {
@@ -120,4 +120,19 @@ public abstract class Employee {
                 + "\nBonus: " + getBonus() + " % and in kronor: "+ calcBonus(getSalary())
                 +"\n*************************************\n";
     }
+
+
+    public static int countPlus(){
+
+        for (Employee employee: EmployeeList.employList) {
+            nextID ++ ;
+        }
+
+
+        return  nextID;
+    }
+
+
+
+
 }
