@@ -12,6 +12,9 @@ public class Salesman extends Employee {
     private double max =35000;
     private Title title;
 
+
+    private double depIdSa = 20;
+
     public Salesman(String name, int age, Gender gender, Title title, double salary, double bonus) {
         super(name, age, gender, title, salary, bonus);
         this.title= Title.SALESMAN;
@@ -49,7 +52,7 @@ public class Salesman extends Employee {
                 rightSalary=true;
             }
 
-        }while (rightSalary==false);
+        }while (!rightSalary);
         return salary;
     }
 
@@ -66,6 +69,9 @@ public class Salesman extends Employee {
         this.bonus = bonus;
     }
 
+    public double getDepIdSa() {
+        return depIdSa;
+    }
 
 
 }

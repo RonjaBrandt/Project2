@@ -6,21 +6,21 @@ import project.pkg2.Statistics.Statistics;
 import static project.pkg2.UI.Main.sc;
 
 
-/**
+/*
  * Star menyn. Det första man ser när man kör programmet.
  */
 
 public class Menu {
     public static void startMenu() {
         while (true) {
-            System.out.println("Welcome to the employee program." +
-                    "\nPlease choose :"
+            System.out.println("Welcome to the employee program."
+                    + "\nPlease choose :"
                     + "\n[1] Employee management."
                     + "\n[2] Employee statistics."
                     + "\n[0] Exit.");
 
 
-            int choiceStartMenu;
+            int choiceStartMenu; // int för att välja i switchen.
 
             try {
                 //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
@@ -44,17 +44,10 @@ public class Menu {
                         System.out.println("Sorry, unrecognized option.\n");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Sorry,you can only use numbers."
+                System.out.println("Sorry, you can only use numbers."
                         + "\nInformation for the admin:"
                         + "\n" + e + "\n");
             }
         }
     }
 }
-/*
-              else{
-                    System.out.println("No employee found by the name of "+name+"."
-                    +"\nReturning to previous menu.\n");
-                    EmployeeManagement.employeeManagementMenu();
-                }
- */

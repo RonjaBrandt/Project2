@@ -5,19 +5,24 @@ package project.pkg2.Employees;
 import project.pkg2.Utilitis.Gender;
 import project.pkg2.Utilitis.Title;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+
 public abstract class Employee {
 
     private String name;
     private Title title;
     private double salary;
     private static double bonus;
-    private double finalBonus;
+    private double finalBonus = 0;
     private int age;
     private Gender gender;
-    private static int id;
-    private static int nextID =0;
+    private  int id;
+    private  int nextID=0;
 
-    public Employee(String name, int age, Gender gender, Title title,double salary, double bonus)  {
+
+    public Employee(String name, int age, Gender gender, Title title, double salary, double bonus)  {
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -61,7 +66,6 @@ public abstract class Employee {
     }
 
     public double getBonus() {
-
         return bonus;
     }
     public double calcBonus(double salary){
@@ -74,49 +78,31 @@ public abstract class Employee {
     public void setBonus(double bonus) {
         this.bonus = bonus;
     }
+
     public  double getFinalBonus() {
         return finalBonus;
     }
-    public static int getID() {
-        return id;
+
+    public  int getId() {
+        id =nextID;
+        nextID++;
+        return nextID;
     }
 
-    public int[] setId(Title title) {
-        this.title=title;
-        Employee.id = nextID;
-        boolean updateID=false;
-        int proffID = 0;
-        do {
-            if (title.equals(Title.PROGRAMMER)){
-                proffID=10;
-                nextID++;
-                updateID =true;
-            } if (title.equals(Title.SECRETARY)){
-                proffID=20;
-                nextID++;
-                updateID =true;
-            } if (title.equals(Title.SALESMAN)){
-                proffID=30;
-                nextID++;
-                updateID =true;
-            } if (title.equals(Title.TECHNICIAN)){
-                proffID=40;
-                nextID++;
-                updateID =true;
-            }
+    public  void  setId() {
+        this.id = nextID;
 
-        }   while (updateID=false);
-        return new int[] {proffID, nextID};
     }
+
     @Override
     public String toString(){
 
-        return "\nInformation about the employee with the EmployeeID: "+ getID()
+        return "\nInformation about the employee with the Employee ID: "+ getId()
                 + "\nName: " + getName()
                 + "\nAge: " + getAge()
                 + "\nGender: " + getGender()
                 + "\nHired as:"
-                + "\nTitel: " + getTitle()
+                + "\nTitle: " + getTitle()
                 + "\nSalary: " + getSalary() + " kr/month"
                 + "\nBonus: " + getBonus() + " % and in kronor : "+ calcBonus(getSalary())
                 +"\n*************************************\n";
