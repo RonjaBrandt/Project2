@@ -25,13 +25,9 @@ public class EmployeeList extends Employee {
     public static void addEmployee() {
 
         boolean done = false;
-        while (done == false) {
-
+        while (!done) {
             System.out.println("Please write the name of the new employee :");
             String name = sc.nextLine();
-
-
-
             int age = 0;
             while (age==0) {
                 try {
@@ -46,9 +42,6 @@ public class EmployeeList extends Employee {
                     continue;
                 }
             }
-
-
-
 
             Gender gender = null;
             int choiceGender;
@@ -77,17 +70,13 @@ public class EmployeeList extends Employee {
                             continue;
                     }
                 } catch (NumberFormatException e1) {
-                    System.out.println("Sorry,you can only use numbers."
+                    System.out.println("Sorry, you can only use numbers."
                             + "\nInformation for the admin:"
                             + "\n" + e1 + "\n");
                     continue;
                 }
 
             }
-
-
-
-
 
             int choiceProfession;
             double salary = 0;
@@ -114,7 +103,7 @@ public class EmployeeList extends Employee {
                             System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             programmer.setBonus(bonus);
-                            programmer.setId();
+
                             break;
                         case 2:
                             title = Title.TECHNICIAN;
@@ -125,7 +114,7 @@ public class EmployeeList extends Employee {
                             System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             technician.setBonus(bonus);
-                            technician.setId();
+
                             break;
                         case 3:
                             title = Title.SECRETARY;
@@ -136,7 +125,7 @@ public class EmployeeList extends Employee {
                             System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             secretary.setBonus(bonus);
-                            secretary.setId();
+
                             break;
                         case 4:
                             title = Title.SALESMAN;
@@ -147,7 +136,7 @@ public class EmployeeList extends Employee {
                             System.out.println("Enter the the bonus for the employee in percentage, please: ");
                             bonus = sc.nextDouble();
                             salesman.setBonus(bonus);
-                            salesman.setId();
+
                             break;
                         default:
                             System.out.println("Sorry, unrecognized option.\n");
@@ -181,7 +170,7 @@ public class EmployeeList extends Employee {
 
                     switch (choiceDone) {
                         case 1:
-
+                            EmployeeList.countPlus();
                             EmployeeList.employList.add(employee);
                             System.out.println("Employee created. Returning to the previous menu.");
                             EmployeeManagement.employeeManagementMenu();
@@ -239,16 +228,19 @@ public class EmployeeList extends Employee {
 
     public static void deleteEmployeeByName() {
         boolean done = false;
+        boolean test = true;
+        int index = 0;
         System.out.println("Enter the name of the person you want to delete: ");
-        while (done == false) {
+        while (!done) {
 
             String name = sc.nextLine();
             for (Employee employee : employList) {
                 if (employee.getName().equalsIgnoreCase(name)) {
+                    index= employList.indexOf(employee);
 
                     System.out.println("Do you want to delete this employee named : " + name);
                     System.out.println("[1] Yes / [2] No, this is the wrong employee.");
-
+                    test = false;
                     int choice;
                     try {
                         //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
@@ -256,7 +248,7 @@ public class EmployeeList extends Employee {
                         sc.nextLine();
                         switch (choice) {
                             case 1:
-                                employList.remove(employee);
+                                employList.remove(index);
                                 System.out.println("The employees name has been updated.");
                                 done = true;
                                 break;
@@ -272,14 +264,18 @@ public class EmployeeList extends Employee {
                                 + "\nInformation for the admin:"
                                 + "\n" + e + "\n");
                     }
-                } else {
-                    System.out.println("No employee found by the name of " + name + "."
-                            + "\nReturning to previous menu.\n");
-                    EmployeeManagement.employeeManagementMenu();
                 }
             }
+            if (test){ // om den inte sätmmer första gången gör detta
+
+                System.out.println("No employee found by the name of " + name + "."
+                        + "\nReturning to previous menu.\n");
+                EmployeeManagement.employeeManagementMenu();
+            }
+            EmployeeManagement.employeeManagementMenu();
+
         }
-        EmployeeManagement.employeeManagementMenu();
+
 
 
     }
