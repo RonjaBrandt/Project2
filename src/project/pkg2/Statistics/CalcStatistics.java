@@ -74,7 +74,7 @@ public class CalcStatistics {
     }
 
 
-    public static void percentageMen() {  // försök få dessa att funka per yrke tack!
+    public static void percentageMen() {
         double men = 0;
         for (Employee employe : EmployeeList.employList) {
             if (employe.getGender().equals(Gender.MALE)) {

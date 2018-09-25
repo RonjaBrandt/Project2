@@ -16,6 +16,10 @@ public class Technician extends Employee {
     private double max =40000;
     private Title title;
 
+
+
+    private double depIdT = 40;
+
     public Technician(String name, int age, Gender gender, Title title, double salary, double bonus) {
         super(name, age, gender, title, salary, bonus);
         this.title=Title.TECHNICIAN;
@@ -53,7 +57,7 @@ public class Technician extends Employee {
                 rightSalary=true;
             }
 
-        }while (rightSalary==false);
+        }while (!rightSalary);
         return salary;
     }
 
@@ -68,7 +72,9 @@ public class Technician extends Employee {
         this.bonus = bonus;
     }
 
-
+    public double getDepIdT() {
+        return depIdT;
+    }
 
 
 }

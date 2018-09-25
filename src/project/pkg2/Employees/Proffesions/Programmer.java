@@ -17,6 +17,10 @@ public class Programmer extends Employee {
     private double min =24500;
     private double max =48000;
 
+
+
+    private int depId = 10;
+
     public Programmer(String name, int age, Gender gender, Title title, double salary, double bonus) {
         super(name, age, gender, title, salary, bonus);
         this.title =Title.PROGRAMMER;
@@ -55,7 +59,7 @@ public class Programmer extends Employee {
                 rightSalary=true;
             }
 
-        }while (rightSalary==false);
+        }while (!rightSalary);
         return salary;
     }
 
@@ -79,6 +83,9 @@ public class Programmer extends Employee {
         this.bonus = bonus;
     }
 
+    public int getDepIdP() {
+        return getDepIdP();
+    }
 
 
 }

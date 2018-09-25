@@ -16,6 +16,10 @@ public class Secretary extends Employee {
     private double min =20000;
     private double max =30000;
 
+
+
+    private double depIdSe = 30;
+
     public Secretary(String name, int age, Gender gender, Title title, double salary, double bonus) {
         super(name, age, gender, title, salary, bonus);
         this.title =Title.PROGRAMMER;
@@ -53,7 +57,7 @@ public class Secretary extends Employee {
                 rightSalary=true;
             }
 
-        }while (rightSalary==false);
+        }while (!rightSalary);
         return salary;
     }
 
@@ -71,6 +75,8 @@ public class Secretary extends Employee {
         this.bonus = bonus;
     }
 
-
+    public double getDepIdSe() {
+        return depIdSe;
+    }
 
 }
