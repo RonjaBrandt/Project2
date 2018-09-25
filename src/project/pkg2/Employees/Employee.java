@@ -102,7 +102,7 @@ public abstract class Employee {
                 + "\nAge: " + getAge()
                 + "\nGender: " + getGender()
                 + "\nHired as:"
-                + "\nTitel: " + getTitle()
+                + "\nTitle: " + getTitle()
                 + "\nSalary: " + getSalary() + " kr/month"
                 + "\nBonus: " + getBonus() + " % and in kronor : "+ calcBonus(getSalary())
                 +"\n*************************************\n";
