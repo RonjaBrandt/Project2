@@ -1,6 +1,7 @@
 package project.pkg2.Employees;
 
 
+import project.pkg2.UI.CreateEmployee;
 import project.pkg2.UI.Menu;
 
 
@@ -20,6 +21,7 @@ public class EmployeeManagement {
                 + "\n[8] Search for an employee by ID."
                 + "\n[9] Search for employees by department."
                 + "\n[10] Display all employees."
+                + "\n[11] Add EmployeeList."
                 + "\n[0] Back to main menu.");
         while (true) {
             int choiceMenu2; // int för att välja i switch.
@@ -58,6 +60,10 @@ public class EmployeeManagement {
                         break;
                     case 10: // visar alla anställda.
                         EmployeeList.printAllEmployees();
+                        break;
+                    case 11:
+                        CreateEmployee.createEmployeeList();
+                        System.out.println("Employee list have been added\n");
                         break;
                     case 0: // här går vi tillbaka till start av program.
                         Menu.startMenu();
