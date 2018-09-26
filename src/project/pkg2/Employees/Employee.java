@@ -5,9 +5,6 @@ package project.pkg2.Employees;
 import project.pkg2.Utilitis.Gender;
 import project.pkg2.Utilitis.Title;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 
 public abstract class Employee {
 
@@ -19,7 +16,7 @@ public abstract class Employee {
     private int age;
     private Gender gender;
     private  int id;
-    private  int nextID=0;
+    public static int nextID=0;
 
 
     public Employee(String name, int age, Gender gender, Title title, double salary, double bonus)  {
@@ -29,6 +26,9 @@ public abstract class Employee {
         this.title=title;
         this.salary=salary;
         this.bonus=bonus;
+
+        this.id=nextID;
+
     }
 
 
@@ -83,16 +83,14 @@ public abstract class Employee {
         return finalBonus;
     }
 
-    public  int getId() {
-        id =nextID;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(){
         nextID++;
-        return nextID;
     }
 
-    public  void  setId() {
-        this.id = nextID;
-
-    }
 
     @Override
     public String toString(){
@@ -102,7 +100,7 @@ public abstract class Employee {
                 + "\nAge: " + getAge()
                 + "\nGender: " + getGender()
                 + "\nHired as:"
-                + "\nTitel: " + getTitle()
+                + "\nTitle: " + getTitle()
                 + "\nSalary: " + getSalary() + " kr/month"
                 + "\nBonus: " + getBonus() + " % and in kronor : "+ calcBonus(getSalary())
                 +"\n*************************************\n";
@@ -120,4 +118,9 @@ public abstract class Employee {
                 + "\nBonus: " + getBonus() + " % and in kronor: "+ calcBonus(getSalary())
                 +"\n*************************************\n";
     }
+
+
+
+
+
 }

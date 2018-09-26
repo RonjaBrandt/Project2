@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    /**
+    /*
      * Scanner för som återanvänds i alla andra classer.
      */
     public static Scanner sc = new Scanner(System.in);

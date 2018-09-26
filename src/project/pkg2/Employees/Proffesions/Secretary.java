@@ -44,6 +44,7 @@ public class Secretary extends Employee {
                 } else if (salary > max) {
                     System.out.println("The salary can't be higher then " + max + "kr.");
                 }
+
                 try {
                     //Ser om användare matar in en siffra eller bokstav i inputen. Om ej siffra fångas det upp av catch.
                     salary = Double.parseDouble(sc.next());
@@ -78,5 +79,7 @@ public class Secretary extends Employee {
     public double getDepIdSe() {
         return depIdSe;
     }
-
+    public void setId(){
+        nextID++;
+    }
 }

@@ -6,7 +6,7 @@ import project.pkg2.Statistics.Statistics;
 import static project.pkg2.UI.Main.sc;
 
 
-/**
+/*
  * Star menyn. Det första man ser när man kör programmet.
  */
 
