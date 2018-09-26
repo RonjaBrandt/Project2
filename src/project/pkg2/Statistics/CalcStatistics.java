@@ -85,46 +85,54 @@ public class CalcStatistics {
                 choice= Integer.parseInt(sc.next());
                 sc.nextLine();
                 switch (choice){
+
                     case 1:
+                        double temp = 0;
                         for (Employee employee : EmployeeList.employList) {
-                            totalSum += employee.getFinalBonus();
+                           temp += employee.calcBonus(employee.getSalary());
+
                         }
-                        System.out.println("You are paying a total of : " + totalSum + " as bonus to all employees.");
+                        System.out.println("You are paying a total of : " + temp + " as bonus to all employees.");
+
                         break;
                     case 2:
+                        double temp2 =0;
                         for (Employee employee : EmployeeList.employList) {
                             if (employee.getTitle().equals(Title.PROGRAMMER)) {
-                                programmerSum += employee.getFinalBonus();
+                                temp2 += employee.calcBonus(employee.getSalary());
                             }
                         }
-                        System.out.println("You are paying a total of : " + programmerSum
+                        System.out.println("You are paying a total of : " + temp2
                                 +" as bonus to all programmers.");
                         break;
                     case 3:
+                         double temp3 = 0;
                         for (Employee employee : EmployeeList.employList) {
                             if (employee.getTitle().equals(Title.SALESMAN)) {
-                                salesmenSum += employee.getFinalBonus();
+                                temp3 += employee.calcBonus(employee.getSalary());
                             }
                         }
-                        System.out.println("You are paying a total of : " + salesmenSum
+                        System.out.println("You are paying a total of : " + temp3
                                 +" as bonus to all programmers.");
                         break;
                     case 4:
+                        double temp4 = 0;
                         for (Employee employee : EmployeeList.employList) {
                             if (employee.getTitle().equals(Title.TECHNICIAN)) {
-                                technicianSum+= employee.getFinalBonus();
+                                temp4+= employee.calcBonus(employee.getSalary());
                             }
                         }
-                        System.out.println("You are paying a total of : " + technicianSum
+                        System.out.println("You are paying a total of : " + temp4
                                 +" as bonus to all programmers.");
                         break;
                     case 5:
+                        double temp5 = 0;
                         for (Employee employee : EmployeeList.employList) {
                             if (employee.getTitle().equals(Title.SECRETARY)) {
-                                secretarySum+= employee.getFinalBonus();
+                                temp5+= employee.calcBonus(employee.getSalary());
                             }
                         }
-                        System.out.println("You are paying a total of : " + secretarySum
+                        System.out.println("You are paying a total of : " + temp5
                                 +" as bonus to all programmers.");
                         break;
                     case 0:

@@ -15,6 +15,7 @@ public class Statistics {
                     + "[4] To see the total cost of the bonus for this company.\n"
                     + "[5] To see how many are women in this company.\n"
                     + "[6] To see how many are mem in this company.\n"
+                    + "[7] To see how many are of unspecified gender in this comppany.\n"
                     + "[0] Back to main menu.");
 
             int choiceStatisticsMenu;
@@ -48,6 +49,8 @@ public class Statistics {
                         //Räknar ut hur många procent som är män i företaget
                         CalcStatistics.percentageMen();
                         break;
+                    case 7 :  // visar unspec
+                        CalcStatistics.percentageUnspec();
                     case 0:
                         //Går tillbaka till huvudmenyn
                         Menu.startMenu();

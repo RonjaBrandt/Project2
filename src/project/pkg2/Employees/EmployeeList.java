@@ -173,7 +173,7 @@ public class EmployeeList extends Employee {
                             }
                             secretary.setSalary(salary);
                             salary = secretary.getSalary();
-                            System.out.println("Enter the the bonus for the employee in percentage, please: ");
+
                             while (bonus == 0) {
                                 System.out.println("Enter the the bonus for the employee in percentage, please: ");
                                 try {
