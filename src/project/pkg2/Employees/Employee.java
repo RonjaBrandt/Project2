@@ -5,9 +5,6 @@ package project.pkg2.Employees;
 import project.pkg2.Utilitis.Gender;
 import project.pkg2.Utilitis.Title;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 
 public abstract class Employee {
 
