@@ -1,5 +1,7 @@
 package project.pkg2.UI;
-
+/**
+ * Author: Ronja, Oscar & Chrille
+ */
 
 import java.util.Scanner;
 
