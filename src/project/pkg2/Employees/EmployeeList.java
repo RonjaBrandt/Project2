@@ -310,9 +310,9 @@ public class EmployeeList extends Employee {
         while (!done) {
 
             String name = sc.nextLine();
-            for (Employee employee : employList) {
-                if (employee.getName().equalsIgnoreCase(name)) {
-                    index = employList.indexOf(employee);
+            for (int i = 0; i <employList.size() ; i++) {
+                if (employList.get(i).getName().equalsIgnoreCase(name)) {
+
 
                     System.out.println("Do you want to delete this employee named : " + name);
                     System.out.println("[1] Yes / [2] No, this is the wrong employee.");
@@ -324,7 +324,7 @@ public class EmployeeList extends Employee {
                         sc.nextLine();
                         switch (choice) {
                             case 1:
-                                employList.remove(index);
+                                employList.remove(i);
                                 System.out.println("The employees name has been updated.");
                                 done = true;
                                 break;
@@ -591,14 +591,14 @@ public class EmployeeList extends Employee {
                     System.out.println("The current salary of this employee is : " + employee.getSalary());
                     System.out.println("Please enter the new salary of this employee : ");
                     String newSalary = sc.nextLine();
-                    System.out.println("Do you want to set this employees age to: " + newSalary);
+                    System.out.println("Do you want to set this employees salary to: " + newSalary);
                     System.out.println("[1] Yes / [2] No.");
                     test = false;
                     String choice = sc.nextLine();
                     switch (choice) {
                         case "1":
                             Employee employee1 = new Employee(employee.getName(), employee.getAge(), employee.getGender(),
-                                    employee.getTitle(), Double.parseDouble(newSalary), employee.getFinalBonus()) {
+                                    employee.getTitle(), Double.parseDouble(newSalary), employee.getBonus()) {
                             };
                             employList.set(index, employee1);
                             System.out.println("The salary of the employee has been updated.");

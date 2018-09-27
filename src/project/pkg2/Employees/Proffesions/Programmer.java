@@ -14,8 +14,8 @@ public class Programmer extends Employee {
     private double salary;
     private double bonus;
     private Title title;
-    private double min =24500;
-    private double max =48000;
+    private final double min =24500;
+    private final double max =48000;
 
 
 
@@ -72,16 +72,12 @@ public class Programmer extends Employee {
 
         return bonus;
     }
-    @Override
-    public double calcBonus(double salary){
-        double finalBonus = salary /100 *bonus;
-        return finalBonus;
-    }
+
 
 
     @Override
     public void setBonus(double bonus) {
-        this.bonus = bonus;
+        this.bonus = salary/100 * bonus;
     }
 
     public int getDepIdP() {

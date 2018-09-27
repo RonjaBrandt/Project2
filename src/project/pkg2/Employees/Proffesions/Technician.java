@@ -70,12 +70,9 @@ public class Technician extends Employee {
 
     @Override
     public void setBonus(double bonus) {
-        this.bonus = bonus;
+        this.bonus = salary/100 * bonus;
     }
 
-    public double getDepIdT() {
-        return depIdT;
-    }
 
     public void setId(){
         nextID++;

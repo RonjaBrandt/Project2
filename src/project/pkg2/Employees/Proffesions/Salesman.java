@@ -66,12 +66,10 @@ public class Salesman extends Employee {
 
     @Override
     public void setBonus(double bonus) {
-        this.bonus = bonus;
+        this.bonus = salary/100 * bonus;
     }
 
-    public double getDepIdSa() {
-        return depIdSa;
-    }
+
     public void setId(){
         nextID++;
     }

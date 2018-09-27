@@ -73,12 +73,10 @@ public class Secretary extends Employee {
 
     @Override
     public void setBonus(double bonus) {
-        this.bonus = bonus;
+        this.bonus = salary/100 * bonus;
     }
 
-    public double getDepIdSe() {
-        return depIdSe;
-    }
+
     public void setId(){
         nextID++;
     }

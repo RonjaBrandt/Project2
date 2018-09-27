@@ -2,8 +2,8 @@
 package project.pkg2.Employees;
 
 
-import project.pkg2.Utilitis.Gender;
-import project.pkg2.Utilitis.Title;
+        import project.pkg2.Utilitis.Gender;
+        import project.pkg2.Utilitis.Title;
 
 
 public abstract class Employee {
@@ -11,7 +11,7 @@ public abstract class Employee {
     private String name;
     private Title title;
     private double salary;
-    private static double bonus;
+    private double bonus;
     private double finalBonus = 0;
     private int age;
     private Gender gender;
@@ -66,14 +66,11 @@ public abstract class Employee {
     }
 
     public double getBonus() {
-        return bonus;
+        double tempBonus = salary;
+        double temp = tempBonus / 100 *bonus;
+        return temp;
     }
-    public double calcBonus(double salary){
-        double finalBonus = salary /100 *bonus;
 
-        return finalBonus;
-
-    }
 
     public void setBonus(double bonus) {
         this.bonus = bonus;
@@ -102,7 +99,7 @@ public abstract class Employee {
                 + "\nHired as:"
                 + "\nTitle: " + getTitle()
                 + "\nSalary: " + getSalary() + " kr/month"
-                + "\nBonus: " + getBonus() + " % and in kronor : "+ calcBonus(getSalary())
+                + "\nBonus: " + bonus + " % and in kronor : "+ getBonus()
                 +"\n*************************************\n";
     }
 
@@ -115,7 +112,7 @@ public abstract class Employee {
                 + "\nHired as:"
                 + "\nTitel: " + getTitle()
                 + "\nSalary: " + getSalary() + " kr/month"
-                + "\nBonus: " + getBonus() + " % and in kronor: "+ calcBonus(getSalary())
+                + "\nBonus: " + bonus + " % and in kronor: "+ getBonus()
                 +"\n*************************************\n";
     }
 

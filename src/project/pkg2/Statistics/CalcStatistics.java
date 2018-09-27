@@ -89,7 +89,7 @@ public class CalcStatistics {
                     case 1:
                         double temp = 0;
                         for (Employee employee : EmployeeList.employList) {
-                           temp += employee.calcBonus(employee.getSalary());
+                           temp += employee.getBonus();
 
                         }
                         System.out.println("You are paying a total of : " + temp + " as bonus to all employees.");
@@ -99,7 +99,7 @@ public class CalcStatistics {
                         double temp2 =0;
                         for (Employee employee : EmployeeList.employList) {
                             if (employee.getTitle().equals(Title.PROGRAMMER)) {
-                                temp2 += employee.calcBonus(employee.getSalary());
+                                temp2 += employee.getBonus();
                             }
                         }
                         System.out.println("You are paying a total of : " + temp2
@@ -109,7 +109,7 @@ public class CalcStatistics {
                          double temp3 = 0;
                         for (Employee employee : EmployeeList.employList) {
                             if (employee.getTitle().equals(Title.SALESMAN)) {
-                                temp3 += employee.calcBonus(employee.getSalary());
+                                temp3 += employee.getBonus();
                             }
                         }
                         System.out.println("You are paying a total of : " + temp3
@@ -119,7 +119,7 @@ public class CalcStatistics {
                         double temp4 = 0;
                         for (Employee employee : EmployeeList.employList) {
                             if (employee.getTitle().equals(Title.TECHNICIAN)) {
-                                temp4+= employee.calcBonus(employee.getSalary());
+                                temp4+= employee.getBonus();
                             }
                         }
                         System.out.println("You are paying a total of : " + temp4
@@ -129,7 +129,7 @@ public class CalcStatistics {
                         double temp5 = 0;
                         for (Employee employee : EmployeeList.employList) {
                             if (employee.getTitle().equals(Title.SECRETARY)) {
-                                temp5+= employee.calcBonus(employee.getSalary());
+                                temp5+= employee.getBonus();
                             }
                         }
                         System.out.println("You are paying a total of : " + temp5
